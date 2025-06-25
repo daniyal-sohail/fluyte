@@ -1,0 +1,60 @@
+import { cn } from "../../lib/utils";
+
+export const BentoGrid = ({
+    className,
+    children,
+}: {
+    className?: string;
+    children?: React.ReactNode;
+}) => {
+    return (
+        <div
+            className={cn(
+                "grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto ",
+                className
+            )}
+        >
+            {children}
+        </div>
+    );
+};
+
+export const BentoGridItem = ({
+    className,
+    title,
+    description,
+    header,
+    icon,
+}: {
+    className?: string;
+    title?: string | React.ReactNode;
+    description?: string | React.ReactNode;
+    header?: React.ReactNode;
+    icon?: React.ReactNode;
+}) => {
+    return (
+        <div
+            data-aos="fade-up"
+            className={cn(
+                "row-span-1 rounded-xl group/bento shadow-md hover:shadow-[0_2px_10px_rgba(78,21,191,0.2)] transition duration-300    p-4  bg-[#1A1A1A] border-white/[0.2] border  justify-between flex flex-col space-y-4   ease-in-out hover:border-gradient-to-tr hover:from-[#0d2e2c] hover:to-[#0d2e2c]  hover:shadow-emerald-500/10 bg-gradient-to-br from-[#092120] via-black to-[#092120] ",
+                className
+            )}
+        >
+            {header}
+            <div className="group-hover/bento:translate-x-2 transition duration-200">
+                {icon}
+                <p className=" text-xl sm:text-xl md:text-2xl  font-normal text-white  ">
+                    {description}
+                </p>
+                <h3
+                    className="text-sm sm:text-base md:text-base font-bold mb-2 mt-2"
+                    style={{ color: "#3BBAB6" }}
+                >
+                    {title}
+                </h3>
+
+
+            </div>
+        </div>
+    );
+};
