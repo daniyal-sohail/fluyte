@@ -19,8 +19,8 @@ export function PerformanceMonitor() {
 
             try {
                 lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
-            } catch () {
-                // Fallback for older browsers
+            } catch (e) {
+                console.log(e)
             }
 
             // Monitor First Input Delay (FID)
@@ -34,8 +34,8 @@ export function PerformanceMonitor() {
 
             try {
                 fidObserver.observe({ entryTypes: ['first-input'] });
-            } catch () {
-                // Fallback for older browsers
+            } catch (e) {
+                console.log(e)
             }
 
             // Monitor Cumulative Layout Shift (CLS)
@@ -52,8 +52,8 @@ export function PerformanceMonitor() {
 
             try {
                 clsObserver.observe({ entryTypes: ['layout-shift'] });
-            } catch () {
-                // Fallback for older browsers
+            } catch (e) {
+                console.log(e)
             }
 
             return () => {
