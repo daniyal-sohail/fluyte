@@ -19,7 +19,7 @@ export function PerformanceMonitor() {
 
             try {
                 lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
-            } catch (e) {
+            } catch () {
                 // Fallback for older browsers
             }
 
@@ -34,7 +34,7 @@ export function PerformanceMonitor() {
 
             try {
                 fidObserver.observe({ entryTypes: ['first-input'] });
-            } catch (e) {
+            } catch () {
                 // Fallback for older browsers
             }
 
@@ -52,7 +52,7 @@ export function PerformanceMonitor() {
 
             try {
                 clsObserver.observe({ entryTypes: ['layout-shift'] });
-            } catch (e) {
+            } catch () {
                 // Fallback for older browsers
             }
 
