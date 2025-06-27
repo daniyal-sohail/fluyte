@@ -2,7 +2,6 @@
 import React from "react";
 import { SectionButton } from "../Common/SectionButton";
 import { WobbleCard } from "../ui/wobble-card";
-import RollingStats from "../Common/RollingStats"; // Make sure to use the correct import path
 import CTA from "../Common/CTA";
 
 export function AboutSection() {
@@ -42,11 +41,11 @@ export function AboutSection() {
                                 </h2>
 
                                 <p className="text-sm sm:text-base lg:text-lg text-gray-300 leading-relaxed max-w-2xl">
-                                    I'm Daniyal Sohail, a MERN Stack and Next.js developer. I build full websites from animated frontends with Framer Motion and GSAP, to backend development and deployment.
+                                    I&apos;m Daniyal Sohail, a MERN Stack and Next.js developer. I build full websites from animated frontends with Framer Motion and GSAP, to backend development and deployment.
                                 </p>
 
                                 <p className="text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed max-w-2xl">
-                                    Besides development, I'm passionate about tech content creation, where I share tips, projects, and what I learn along the way.
+                                    Besides development, I&apos;m passionate about tech content creation, where I share tips, projects, and what I learn along the way.
                                 </p>
 
                                 <div className="pt-2">

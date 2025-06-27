@@ -1,4 +1,4 @@
-import { HoverBoderBtn } from "./SectionButton";
+import { SectionButton } from "./SectionButton";
 
 interface HeadingProps {
     para: string;
@@ -12,7 +12,7 @@ export default function Heading({ para, headOne, headTwo, headThree, btnText }: 
     return (
         <div className="flex flex-col items-center text-center">
 
-            <HoverBoderBtn btnText={btnText} />
+            <SectionButton btnText={btnText} />
 
             {/* Large Heading */}
             <h1

@@ -14,13 +14,13 @@ import { SectionButton } from "../Common/SectionButton";
 import CTA from "../Common/CTA";
 
 const images: string[] = [
-    "/img/ser.png",
-    "/img/ser.png",
-    "/img/ser.png",
-    "/img/ser.png",
-    "/img/ser.png",
-    "/img/ser.png",
-    "/img/ser.png",
+    "/img/1.png",
+    "/img/2.png",
+    "/img/3.png",
+    "/img/6.png",
+    "/img/7.png",
+    "/img/5.png",
+    "/img/4.png",
 ];
 
 // ✅ Fix type of props: `img` can be a URL string or a StaticImageData object
@@ -33,11 +33,12 @@ const Skeleton: React.FC<SkeletonProps> = ({ img }) => (
     <Image
         src={img}
         alt="Service Image"
-        width={300} // Adjust as needed
-        height={200} // Adjust as needed
-        className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl object-cover bg-gradient-to-br from-neutral-200  to-neutral-100"
-        layout="responsive" // Ensures responsiveness
+        width={300}
+        height={200}
+        className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl object-cover object-top bg-gradient-to-br from-neutral-200 to-neutral-100"
+        layout="responsive"
     />
+
 );
 
 export function HomeServices() {
@@ -71,6 +72,8 @@ export function HomeServices() {
                             className={i === 3 || i === 6 ? "md:col-span-2" : ""}
                         />
                     ))}
+
+
                 </BentoGrid>
                 <div className="max-w-4xl mx-auto my-8">
                     <CTA className="items-center justify-end" buttonText={"Explore All"} />

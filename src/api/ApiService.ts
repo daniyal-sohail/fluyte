@@ -26,8 +26,8 @@ export const contactApi = {
         try {
             const response = await api.post('/contact', data);
             return response.data;
-        } catch (error: any) {
-            const errorMessage = error.response?.data?.message || 'Failed to submit contact form';
+        } catch (error: unknown) {
+            const errorMessage = (error as { response?: { data?: { message?: string } } })?.response?.data?.message || 'Failed to submit contact form';
             throw new Error(errorMessage);
         }
     },
@@ -40,8 +40,8 @@ export const serviceApi = {
         try {
             const response = await api.post('/service', data);
             return response.data;
-        } catch (error: any) {
-            const errorMessage = error.response?.data?.message || 'Failed to submit service request';
+        } catch (error: unknown) {
+            const errorMessage = (error as { response?: { data?: { message?: string } } })?.response?.data?.message || 'Failed to submit service request';
             throw new Error(errorMessage);
         }
     },

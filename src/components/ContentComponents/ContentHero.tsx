@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
@@ -55,7 +54,7 @@ export function ContentHero() {
                                 }}
                                 className="relative z-10 mx-auto max-w-xl py-4 text-center text-lg font-normal text-neutral-600 dark:text-neutral-400"
                             >
-                                I make tech videos that solve real problems I've faced myself. No fluff — just clear, simple guides to help you fix issues and learn quicker.
+                                I make tech videos that solve real problems I&apos;ve faced myself. No fluff — just clear, simple guides to help you fix issues and learn quicker.
                             </motion.p>
                             <motion.div
                                 initial={{
@@ -68,7 +67,7 @@ export function ContentHero() {
                                     duration: 0.3,
                                     delay: 1,
                                 }}
-                                className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-4"
+                                className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-4 mb-2"
                             >
                                 <button className="w-48 transform rounded-lg bg-[#3BBAB6] px-4 py-3 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#3BBAB6] hover:cursor-pointer">
                                     Watch My Content

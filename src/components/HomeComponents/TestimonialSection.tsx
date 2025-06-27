@@ -1,7 +1,6 @@
 "use client"
 import React from "react";
 import { SectionButton } from "../Common/SectionButton";
-import Image from "next/image";
 import { RiDoubleQuotesR } from "react-icons/ri";
 import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
 
@@ -16,21 +15,12 @@ const testimonialItems = [
                 <h3 className="text-white font-bold text-2xl mb-3">
                     You inspired me to start my own digital products business.
                 </h3>
-                <p className="text-gray-400 text-sm mb-6 flex-grow">
+                <p className="text-gray-400 text-xl mb-6 flex-grow">
                     Thanks to your team, I sourced digital products in my niche and
                     started my online store.
                 </p>
                 <div className="flex items-center mt-auto">
-                    <div className="w-12 h-12 rounded-full bg-gray-600 mr-3 overflow-hidden">
-                        <Image
-                            src="/img/testimonial/client1.jpg"
-                            alt="Jacob L."
-                            width={48}
-                            height={48}
-                            unoptimized
-                            className="object-cover"
-                        />
-                    </div>
+
                     <div>
                         <p className="font-medium text-white">Jacob L.</p>
                         <p className="text-gray-400 text-xs">UNITED STATES</p>
@@ -53,16 +43,7 @@ const testimonialItems = [
                     lead magnets for my community.
                 </p>
                 <div className="flex items-center mt-auto">
-                    <div className="w-12 h-12 rounded-full bg-gray-600 mr-3 overflow-hidden">
-                        <Image
-                            src="/img/testimonial/client2.jpg"
-                            alt="Michael K."
-                            width={48}
-                            height={48}
-                            unoptimized
-                            className="object-cover"
-                        />
-                    </div>
+
                     <div>
                         <p className="font-medium text-white">Michael K.</p>
                         <p className="text-gray-400 text-xs">UNITED STATES</p>
@@ -81,20 +62,11 @@ const testimonialItems = [
                     Excited to get all visuals, including the graphics and mockups!
                 </h3>
                 <p className="text-gray-400 text-sm mb-6 flex-grow">
-                    The flexibility of the library is insane; can't wait to use this in my
+                    The flexibility of the library is insane; can&apos;t wait to use this in my
                     funnel.
                 </p>
                 <div className="flex items-center mt-auto">
-                    <div className="w-12 h-12 rounded-full bg-gray-600 mr-3 overflow-hidden">
-                        <Image
-                            src="/img/testimonial/client3.jpg"
-                            alt="Frederik J."
-                            width={48}
-                            height={48}
-                            unoptimized
-                            className="object-cover"
-                        />
-                    </div>
+
                     <div>
                         <p className="font-medium text-white">Frederik J.</p>
                         <p className="text-gray-400 text-xs">DENMARK</p>
@@ -117,16 +89,7 @@ const testimonialItems = [
                     content is immersive.
                 </p>
                 <div className="flex items-center mt-auto">
-                    <div className="w-12 h-12 rounded-full bg-gray-600 mr-3 overflow-hidden">
-                        <Image
-                            src="/img/testimonial/client4.jpg"
-                            alt="Edwin P."
-                            width={48}
-                            height={48}
-                            unoptimized
-                            className="object-cover"
-                        />
-                    </div>
+
                     <div>
                         <p className="font-medium text-white">Edwin P.</p>
                         <p className="text-gray-400 text-xs">SINGAPORE</p>
@@ -149,16 +112,7 @@ const testimonialItems = [
                     specific audience needs.
                 </p>
                 <div className="flex items-center mt-auto">
-                    <div className="w-12 h-12 rounded-full bg-gray-600 mr-3 overflow-hidden">
-                        <Image
-                            src="/img/testimonial/client5.jpg"
-                            alt="Elena R."
-                            width={48}
-                            height={48}
-                            unoptimized
-                            className="object-cover"
-                        />
-                    </div>
+
                     <div>
                         <p className="font-medium text-white">Elena R.</p>
                         <p className="text-gray-400 text-xs">ITALY</p>

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface ProjectCardProps {
     title: string;
     content: string;
@@ -43,9 +45,11 @@ function ProjectCard({ title, content, buttons = [], btnOne, btnTwo, btnThree, i
 
 
                         <div className="relative overflow-hidden rounded-lg shadow-md">
-                            <img
+                            <Image
                                 src={img}
                                 alt={title || "Project"}
+                                width={800}
+                                height={600}
                                 className="w-full h-auto object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-70"></div>

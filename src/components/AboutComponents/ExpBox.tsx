@@ -1,6 +1,14 @@
 import React from "react";
+import Image from "next/image";
 
-function ExpBox({ img, title, role, duration }: any) {
+interface ExpBoxProps {
+    img: string;
+    title: string;
+    role: string;
+    duration: string;
+}
+
+function ExpBox({ img, title, role, duration }: ExpBoxProps) {
     return (
         <div className="group relative overflow-hidden">
 
@@ -9,9 +17,11 @@ function ExpBox({ img, title, role, duration }: any) {
                 <div className="flex items-center flex-1 min-w-0 pr-3 sm:pr-4">
                     {/* Enhanced image container */}
                     <div className="relative flex-shrink-0">
-                        <img
+                        <Image
                             src={img}
                             alt={`${title} at ${role}`}
+                            width={64}
+                            height={64}
                             className="relative h-12 w-12 xs:h-14 xs:w-14 sm:h-16 sm:w-16 md:h-14 md:w-14 rounded-4xl object-cover shadow-lg group-hover:shadow-xl group-hover:scale-105 transition-all duration-300"
                         />
                     </div>

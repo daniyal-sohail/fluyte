@@ -174,33 +174,3 @@ export function Navbar(): React.ReactElement {
     );
 }
 
-interface NavbarMobileProps {
-    setMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-function NavbarMobile({ setMobileMenuOpen }: NavbarMobileProps): React.ReactElement {
-    return (
-        <div className="flex flex-col space-y-4">
-            {navItems.map((item, index) => (
-                <div key={index} className="border-b border-gray-800 pb-3">
-                    <Link
-                        href={item.href}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="block py-2 text-white font-medium"
-                    >
-                        {item.name}
-                    </Link>
-                </div>
-            ))}
-
-            <div className="pt-2">
-                <Button
-                    className="w-full bg-red-500 hover:bg-red-600 text-white"
-                    onClick={() => setMobileMenuOpen(false)}
-                >
-                    Contact Us
-                </Button>
-            </div>
-        </div>
-    );
-}

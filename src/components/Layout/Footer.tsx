@@ -63,7 +63,7 @@ function Footer() {
                                 Ready to bring your ideas to life?
                             </h1>
                             <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 leading-[150%] mb-8">
-                                Let's collaborate and create something extraordinary together.
+                                Let&apos;s collaborate and create something extraordinary together.
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4 items-start">

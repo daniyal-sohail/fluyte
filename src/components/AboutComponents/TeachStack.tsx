@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 
 // Skills data with logos
 const skillsData = {
@@ -136,10 +137,12 @@ export function TeachStack() {
                                 data-aos="fade-up"
                                 data-aos-delay={itemIndex * 50}
                             >
-                                <img
+                                <Image
                                     className="h-12 w-12 mb-2 object-contain"
                                     src={item.image}
                                     alt={item.name}
+                                    width={48}
+                                    height={48}
                                     onError={(e) => {
                                         (e.target as HTMLImageElement).style.display = 'none';
                                     }}

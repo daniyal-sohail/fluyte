@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import { SectionButton } from "../Common/SectionButton";
 import { Carousel } from "../ui/carousel";
 

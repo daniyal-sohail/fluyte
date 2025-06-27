@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from 'react';
 import { X, CheckCircle, XCircle, Loader2 } from 'lucide-react';
-import Link from 'next/link';
 import gsap from 'gsap';
 import { contactApi, ContactFormData } from '../../api/ApiService';
 
@@ -380,8 +379,9 @@ const ServiceRequestForm: React.FC<FormComponentProps & { showNotification: (typ
             } else {
                 showNotification('error', 'Submission Failed', response.message || 'Please try again.');
             }
-        } catch (error: any) {
-            showNotification('error', 'Submission Failed', error.message || 'An unexpected error occurred. Please try again.');
+        } catch (error: unknown) {
+            const errorMessage = (error as { message?: string })?.message || 'An unexpected error occurred. Please try again.';
+            showNotification('error', 'Submission Failed', errorMessage);
         } finally {
             setIsSubmitting(false);
         }
@@ -493,8 +493,12 @@ const ServiceRequestForm: React.FC<FormComponentProps & { showNotification: (typ
     );
 };
 
-// Schedule Meeting Component (unchanged)
+// Schedule Meeting Component (simplified)
 const ScheduleMeetingComponent: React.FC<FormComponentProps> = ({ onBack, formRef }) => {
+    const openCalendly = () => {
+        window.open('https://calendly.com/daniyalsohaildev', '_blank');
+    };
+
     return (
         <div ref={formRef} className="px-6 pb-8" style={{ opacity: 0 }}>
             <div className="flex items-center mb-6">
@@ -514,12 +518,12 @@ const ScheduleMeetingComponent: React.FC<FormComponentProps> = ({ onBack, formRe
                 Book a 1-on-1 consultation with me to discuss your project needs in detail.
             </p>
 
-            <Link
-                href="/schedule-meeting"
-                className="block w-full bg-teal-500 hover:bg-teal-600 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-300 text-center"
+            <button
+                onClick={openCalendly}
+                className="w-full bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600 text-white font-medium py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
                 View My Calendar
-            </Link>
+            </button>
 
             <div className="mt-6 bg-[#1e1e1e] p-4 rounded-lg border border-gray-800">
                 <h3 className="text-lg font-medium mb-2">What to expect</h3>
@@ -542,6 +546,7 @@ const ScheduleMeetingComponent: React.FC<FormComponentProps> = ({ onBack, formRe
                     </li>
                 </ul>
             </div>
+
         </div>
     );
 };
@@ -583,8 +588,9 @@ const AskQuestionForm: React.FC<FormComponentProps & { showNotification: (type: 
             } else {
                 showNotification('error', 'Submission Failed', response.message || 'Please try again.');
             }
-        } catch (error: any) {
-            showNotification('error', 'Submission Failed', error.message || 'An unexpected error occurred. Please try again.');
+        } catch (error: unknown) {
+            const errorMessage = (error as { message?: string })?.message || 'An unexpected error occurred. Please try again.';
+            showNotification('error', 'Submission Failed', errorMessage);
         } finally {
             setIsSubmitting(false);
         }

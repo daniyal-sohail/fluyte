@@ -2,6 +2,7 @@
 import { IconArrowNarrowRight, IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import { useState, useRef, useId, useEffect, useCallback } from "react";
 import Link from "next/link";
+import Image from 'next/image';
 
 interface SlideData {
     title: string;
@@ -69,14 +70,16 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
             >
                 {/* Background image */}
                 <div className="absolute inset-0">
-                    <img
+                    <Image
                         className={`
                             w-full h-full object-cover transition-all duration-700 ease-out
                             ${isActive ? 'scale-100' : 'scale-110'}
                         `}
                         alt={title}
                         src={src}
-                        loading="lazy"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+                        priority={index === 0}
                     />
                     {/* Overlay gradients */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />

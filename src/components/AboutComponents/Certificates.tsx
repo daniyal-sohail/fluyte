@@ -1,9 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react'
-import { SectionButton } from '../Common/SectionButton';
 import { cn } from "@/lib/utils";
 import Image from 'next/image';
-import Link from 'next/link';
 
 const clientsImg = [
     {

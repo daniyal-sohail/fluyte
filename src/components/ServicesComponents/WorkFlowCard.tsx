@@ -3,10 +3,9 @@ interface WorkFlowCardProps {
     title: string
     content: string
     index: number
-    isLast: boolean
 }
 
-function WorkFlowCard({ hour, title, content, index, isLast }: WorkFlowCardProps) {
+function WorkFlowCard({ hour, title, content, index }: WorkFlowCardProps) {
     return (
         <div className="w-full px-3 sm:px-4 lg:px-0">
             <div className="relative mb-4 sm:mb-6 lg:mb-8 max-w-full">

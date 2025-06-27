@@ -27,13 +27,13 @@ export default function HeroSection(): React.ReactElement {
             <div className="w-full max-w-[1800px] px-4 sm:px-8 md:px-12 lg:px-20 2xl:px-32 py-10 sm:mt-18 relative z-[2] mt-6">
                 {/* "Available for work" button */}
                 <div className="flex justify-center items-center">
-                    <SectionButton btnText={"Available for work"} />
+                    <SectionButton btnText={"Available for work"} href={"https://www.upwork.com/freelancers/~01341fed9cb414c4ac"} />
                 </div>
 
                 <div className="text-center mx-auto">
                     {/* Main heading - larger on big screens */}
                     <h1 className="text-4xl sm:text-3xl md:text-5xl xl:text-7xl 2xl:text-8xl font-extrabold leading-snug sm:leading-snug md:leading-tight xl:leading-tight mb-6 md:mb-8 text-white">
-                        I'm Daniyal Sohail, a passionate & dedicated
+                        I&apos;m Daniyal Sohail, a passionate & dedicated
                         <div
                             className="text-transparent leading-normal sm:leading-normal md:leading-tight"
                             style={{

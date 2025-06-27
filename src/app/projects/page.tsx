@@ -1,6 +1,5 @@
 import Footer from '@/components/Layout/Footer'
 import { Navbar } from '@/components/Layout/Navbar'
-import OpenSourceSlider from '@/components/ProjectsComponents/OpenSource'
 import { Project } from '@/components/ProjectsComponents/Project'
 import ProjectHero from '@/components/ProjectsComponents/ProjectHero'
 import React from 'react'
@@ -11,7 +10,7 @@ function page() {
             <Navbar />
             <ProjectHero />
             <Project />
-            <OpenSourceSlider />
+            {/* <OpenSourceSlider /> */}
             <Footer />
         </div>
     )

@@ -3,7 +3,7 @@ import { SectionButton } from '../Common/SectionButton'
 import ExpBox from './ExpBox'
 
 function AboutExperience() {
-    let exp = [
+    const exp = [
         {
             title: "Developer Tag",
             role: "Software Engineer",
@@ -58,8 +58,8 @@ function AboutExperience() {
                 </div>
 
                 <div className="grid grid-cols-1 ">
-                    {exp.map((item) => (
-                        <ExpBox title={item.title} img={item.img} role={item.role} duration={item.duration} />
+                    {exp.map((item, index) => (
+                        <ExpBox key={index} title={item.title} img={item.img} role={item.role} duration={item.duration} />
                     ))}
                 </div>
             </div>

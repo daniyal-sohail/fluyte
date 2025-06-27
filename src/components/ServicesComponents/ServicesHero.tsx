@@ -28,7 +28,7 @@ export default function ServicesHero(): React.ReactElement {
             <div className="w-full max-w-[1800px] px-4 sm:px-8 md:px-12 lg:px-20 2xl:px-32 py-10 sm:mt-18 relative z-[2] mt-6">
                 {/* Service status indicator */}
                 <div className="flex justify-center items-center mb-1">
-                    <SectionButton btnText={"Professional Services Available"} />
+                    <SectionButton btnText={"Professional Services Available"} href={"https://www.upwork.com/freelancers/~01341fed9cb414c4ac"} />
                 </div>
 
                 <div className="text-center mx-auto">
@@ -47,13 +47,6 @@ export default function ServicesHero(): React.ReactElement {
                             Tailored for Your Business Success
                         </div>
                     </h1>
-
-                    {/* Services subtitle */}
-                    <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 md:mb-12 max-w-4xl mx-auto leading-relaxed">
-                        From full-stack web development to stunning UI/UX design,
-                        I deliver cutting-edge solutions that drive growth and engagement.
-                    </p>
-
 
 
                     {/* CTA Button */}

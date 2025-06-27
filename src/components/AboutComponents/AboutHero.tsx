@@ -1,8 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import { Mail, Github, Linkedin, Twitter, Instagram, Youtube, MapPin, Calendar, Award, Star, Rocket } from "lucide-react"
+import { Mail, Github, Linkedin, Instagram, Youtube, MapPin, Calendar, Award, Star, Rocket } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 const AboutHero = ({
     name = "Daniyal Sohail",
@@ -22,7 +23,6 @@ const AboutHero = ({
 }) => {
     const [hoveredStat, setHoveredStat] = useState<number | null>(null)
     const [hoveredTech, setHoveredTech] = useState<number | null>(null)
-    const [hoveredButton, setHoveredButton] = useState<string | null>(null)
     const [hoveredSocial, setHoveredSocial] = useState<number | null>(null)
     const [hoveredCard, setHoveredCard] = useState(false)
 
@@ -145,10 +145,10 @@ const AboutHero = ({
                                     <MapPin size={14} className="sm:w-4 sm:h-4 flex-shrink-0" style={{ color: '#3BBAB6' }} />
                                     <span className="truncate">{location}</span>
                                 </div>
-                                <div className="flex items-center space-x-2">
+                                <Link className="flex items-center space-x-2" href="mailto:daniyalsohaildev@gmail.com">
                                     <Mail size={14} className="sm:w-4 sm:h-4 flex-shrink-0" style={{ color: '#3BBAB6' }} />
                                     <span className="truncate">{email}</span>
-                                </div>
+                                </Link>
                             </div>
 
                             {/* Social Links */}
@@ -200,9 +200,11 @@ const AboutHero = ({
                                 <div className="relative">
                                     {/* Profile Image */}
                                     <div className="relative w-full aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden">
-                                        <img
+                                        <Image
                                             src={avatar || "/placeholder.svg"}
                                             alt={name}
+                                            width={400}
+                                            height={500}
                                             className="w-full h-full object-cover"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>

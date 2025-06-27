@@ -58,7 +58,6 @@ export function MyWorkFlow() {
                             title={item.title}
                             content={item.content}
                             index={index}
-                            isLast={index === work.length - 1}
                         />
                     ))}
                 </div>

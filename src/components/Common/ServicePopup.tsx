@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from 'react';
 import { X, CheckCircle, XCircle, Loader2 } from 'lucide-react';
+import gsap from 'gsap';
 import { serviceApi, ServiceRequestData } from '../../api/ApiService';
 
 // Define interfaces
@@ -23,16 +24,10 @@ const NotificationPopup: React.FC<NotificationPopupProps> = ({ isOpen, type, tit
 
     useEffect(() => {
         if (isOpen && popupRef.current) {
-            // Use vanilla JS animations for consistency
-            const popup = popupRef.current;
-            popup.style.opacity = '0';
-            popup.style.transform = 'scale(0.9)';
-
-            setTimeout(() => {
-                popup.style.transition = 'opacity 0.3s ease-out, transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
-                popup.style.opacity = '1';
-                popup.style.transform = 'scale(1)';
-            }, 50);
+            gsap.fromTo(popupRef.current,
+                { opacity: 0, scale: 0.9 },
+                { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }
+            );
         }
     }, [isOpen]);
 
@@ -124,8 +119,29 @@ const ServicePopup: React.FC<ServicePopupProps> = ({ onClose, serviceTitle }) =>
     };
 
     const closePopup = (): void => {
-        setIsOpen(false);
-        onClose();
+        const tl = gsap.timeline({
+            onComplete: () => {
+                setIsOpen(false);
+                onClose();
+            }
+        });
+
+        if (popupContentRef.current) {
+            tl.to(popupContentRef.current, {
+                scale: 0.9,
+                opacity: 0,
+                duration: 0.3,
+                ease: "power2.out"
+            });
+        }
+
+        if (popupOverlayRef.current) {
+            tl.to(popupOverlayRef.current, {
+                opacity: 0,
+                duration: 0.3,
+                ease: "power2.out"
+            }, "-=0.2");
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
@@ -144,7 +160,7 @@ const ServicePopup: React.FC<ServicePopupProps> = ({ onClose, serviceTitle }) =>
         }
     };
 
-    const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>): Promise<void> => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
         e.preventDefault();
 
         // Basic validation
@@ -190,9 +206,10 @@ const ServicePopup: React.FC<ServicePopupProps> = ({ onClose, serviceTitle }) =>
             } else {
                 showNotification('error', 'Submission Failed', response.message || 'Please try again.');
             }
-        } catch (error: any) {
+        } catch (error: unknown) {
             console.error('Service form submission error:', error);
-            showNotification('error', 'Submission Failed', error.message || 'An unexpected error occurred. Please try again.');
+            const errorMessage = (error as { message?: string })?.message || 'An unexpected error occurred. Please try again.';
+            showNotification('error', 'Submission Failed', errorMessage);
         } finally {
             setIsSubmitting(false);
         }
@@ -201,32 +218,27 @@ const ServicePopup: React.FC<ServicePopupProps> = ({ onClose, serviceTitle }) =>
     // Animation when popup opens
     useEffect(() => {
         if (isOpen && popupOverlayRef.current && popupContentRef.current && formRef.current) {
-            const overlay = popupOverlayRef.current;
-            const content = popupContentRef.current;
-            const form = formRef.current;
+            const tl = gsap.timeline();
 
-            // Initial states
-            overlay.style.opacity = '0';
-            content.style.opacity = '0';
-            content.style.transform = 'scale(0.9)';
-            form.style.opacity = '0';
-            form.style.transform = 'translateY(20px)';
+            // Animate overlay
+            tl.fromTo(popupOverlayRef.current,
+                { opacity: 0 },
+                { opacity: 1, duration: 0.3, ease: "power2.out" }
+            );
 
-            // Animate in
-            setTimeout(() => {
-                overlay.style.transition = 'opacity 0.3s ease-out';
-                overlay.style.opacity = '1';
+            // Animate content
+            tl.fromTo(popupContentRef.current,
+                { scale: 0.9, opacity: 0 },
+                { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.7)" },
+                "-=0.1"
+            );
 
-                content.style.transition = 'opacity 0.4s ease-out, transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
-                content.style.opacity = '1';
-                content.style.transform = 'scale(1)';
-
-                setTimeout(() => {
-                    form.style.transition = 'opacity 0.4s ease-out, transform 0.4s ease-out';
-                    form.style.opacity = '1';
-                    form.style.transform = 'translateY(0)';
-                }, 100);
-            }, 50);
+            // Animate form
+            tl.fromTo(formRef.current,
+                { opacity: 0, y: 20 },
+                { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" },
+                "-=0.2"
+            );
         }
     }, [isOpen]);
 
@@ -237,11 +249,13 @@ const ServicePopup: React.FC<ServicePopupProps> = ({ onClose, serviceTitle }) =>
                     ref={popupOverlayRef}
                     className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-[999]"
                     onClick={closePopup}
+                    style={{ opacity: 0 }}
                 >
                     <div
                         ref={popupContentRef}
                         className="bg-[#121212] text-white z-[999] rounded-xl w-full max-w-md overflow-hidden shadow-2xl"
                         onClick={(e): void => e.stopPropagation()}
+                        style={{ opacity: 0, transform: 'scale(0.9)' }}
                     >
                         {/* Close Button */}
                         <div className="flex justify-end p-4">
@@ -255,13 +269,13 @@ const ServicePopup: React.FC<ServicePopupProps> = ({ onClose, serviceTitle }) =>
                         </div>
 
                         {/* Form */}
-                        <div ref={formRef} className="px-6 pb-8">
+                        <div ref={formRef} className="px-6 pb-8" style={{ opacity: 0 }}>
                             <div className="mb-6">
                                 <h2 className="text-2xl font-bold mb-2">{config.title}</h2>
                                 <p className="text-gray-400 text-sm">{config.description}</p>
                             </div>
 
-                            <div className="space-y-4">
+                            <form onSubmit={handleSubmit} className="space-y-4">
                                 <div>
                                     <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
                                         Your Name
@@ -314,7 +328,7 @@ const ServicePopup: React.FC<ServicePopupProps> = ({ onClose, serviceTitle }) =>
                                 </div>
 
                                 <button
-                                    onClick={handleSubmit}
+                                    type="submit"
                                     disabled={isSubmitting}
                                     className="w-full bg-teal-500 hover:bg-teal-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                                 >
@@ -327,7 +341,7 @@ const ServicePopup: React.FC<ServicePopupProps> = ({ onClose, serviceTitle }) =>
                                         'Submit Request'
                                     )}
                                 </button>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
