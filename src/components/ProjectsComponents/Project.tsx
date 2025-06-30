@@ -120,6 +120,7 @@ export function Project() {
                             content={item.content}
                             buttons={item.buttons}
                             img={item.img}
+                            priority={index < 3}
                         />
                     ))}
                 </div>

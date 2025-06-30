@@ -79,6 +79,7 @@ export function AllServices() {
                             title={item.title}
                             description={item.description}
                             img={item.img}
+                            priority={index < 3} // Set priority for first 3 images
                         />
                     ))}
                 </div>

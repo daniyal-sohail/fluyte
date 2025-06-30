@@ -9,9 +9,10 @@ interface ServiceCardProps {
     title: string;
     description: string;
     img: string | StaticImageData;
+    priority?: boolean;
 }
 
-export function ServiceCard({ title, description, img }: ServiceCardProps) {
+export function ServiceCard({ title, description, img, priority = false }: ServiceCardProps) {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
 
     const handleGetQuoteClick = () => {
@@ -30,10 +31,14 @@ export function ServiceCard({ title, description, img }: ServiceCardProps) {
                     <CardItem translateZ="100" className="w-full overflow-hidden rounded-xl">
                         <Image
                             src={img}
-                            height={1000}
-                            width={1000}
+                            height={224}
+                            width={352}
                             className="h-56 w-full object-cover rounded-xl transition-transform duration-300 group-hover/card:scale-105"
-                            alt="thumbnail"
+                            alt={`${title} service thumbnail`}
+                            priority={priority}
+                            placeholder="blur"
+                            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                         />
                     </CardItem>
 

@@ -88,9 +88,13 @@ function Certificates() {
                                         <div className="relative w-[300px] h-[210px] md:w-[300px] md:h-[200px] lg:w-[550px] lg:h-[450px] flex items-center justify-center">
                                             <Image
                                                 src={item.imgPath}
-                                                alt={item.name}
+                                                alt={`${item.name} certificate ${idx + 1}`}
                                                 fill
                                                 className="object-contain"
+                                                priority={idx < 3}
+                                                placeholder="blur"
+                                                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                                                sizes="(max-width: 768px) 300px, (max-width: 1024px) 300px, 550px"
                                                 style={{
                                                     mixBlendMode: 'screen',
                                                 }}

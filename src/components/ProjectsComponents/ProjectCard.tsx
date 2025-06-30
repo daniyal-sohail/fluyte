@@ -8,9 +8,10 @@ interface ProjectCardProps {
     btnTwo?: string;
     btnThree?: string;
     img: string;
+    priority?: boolean;
 }
 
-function ProjectCard({ title, content, buttons = [], btnOne, btnTwo, btnThree, img }: ProjectCardProps) {
+function ProjectCard({ title, content, buttons = [], btnOne, btnTwo, btnThree, img, priority = false }: ProjectCardProps) {
     // Convert legacy button props to array if buttons array is not provided
     const buttonArray = buttons.length > 0
         ? buttons
@@ -41,16 +42,17 @@ function ProjectCard({ title, content, buttons = [], btnOne, btnTwo, btnThree, i
                     </div>
 
                     <div className="w-full md:w-4/5">
-
-
-
                         <div className="relative overflow-hidden rounded-lg shadow-md">
                             <Image
                                 src={img}
-                                alt={title || "Project"}
+                                alt={`${title} project screenshot`}
                                 width={800}
                                 height={600}
                                 className="w-full h-auto object-cover"
+                                priority={priority}
+                                placeholder="blur"
+                                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                                sizes="(max-width: 768px) 100vw, 66vw"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-70"></div>
                         </div>
