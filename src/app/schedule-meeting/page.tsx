@@ -2,6 +2,42 @@
 import React, { useEffect } from 'react';
 import { Calendar, Clock, Video, CheckCircle, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Schedule Meeting with Daniyal Sohail - Full Stack Developer",
+    description: "Schedule a meeting with Daniyal Sohail, professional Full Stack Developer. Book a consultation for web development projects, React development, Node.js development, and custom solutions.",
+    keywords: [
+        "Schedule Meeting Daniyal Sohail",
+        "Book Consultation",
+        "Full Stack Developer Consultation",
+        "Web Development Consultation",
+        "React Developer Meeting",
+        "Node.js Developer Consultation",
+        "Project Discussion",
+        "Development Consultation"
+    ],
+    openGraph: {
+        title: "Schedule Meeting with Daniyal Sohail - Full Stack Developer",
+        description: "Schedule a meeting with Daniyal Sohail, professional Full Stack Developer. Book a consultation for web development projects and custom solutions.",
+        url: "https://daniyalsohail.me/schedule-meeting",
+        images: [
+            {
+                url: "/img/hero.png",
+                width: 1200,
+                height: 630,
+                alt: "Schedule Meeting with Daniyal Sohail - Full Stack Developer",
+            },
+        ],
+    },
+    twitter: {
+        title: "Schedule Meeting with Daniyal Sohail - Full Stack Developer",
+        description: "Schedule a meeting with Daniyal Sohail, professional Full Stack Developer. Book a consultation for web development projects and custom solutions.",
+    },
+    alternates: {
+        canonical: "https://daniyalsohail.me/schedule-meeting",
+    },
+};
 
 const ScheduleMeetingPage = () => {
     useEffect(() => {
