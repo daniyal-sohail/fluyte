@@ -12,9 +12,6 @@ const nextConfig: NextConfig = {
   // Enable compression
   compress: true,
 
-  // Enable SWC minification
-  swcMinify: true,
-
   // Optimize bundle size
   experimental: {
     optimizePackageImports: ['@tabler/icons-react', 'lucide-react', 'react-icons'],

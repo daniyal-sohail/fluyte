@@ -19,8 +19,8 @@ export function PerformanceMonitor() {
 
             try {
                 lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
-            } catch (e) {
-                console.log(e)
+            } catch {
+                // Fallback for older browsers
             }
 
             // Monitor First Input Delay (FID)
@@ -34,17 +34,18 @@ export function PerformanceMonitor() {
 
             try {
                 fidObserver.observe({ entryTypes: ['first-input'] });
-            } catch (e) {
-                console.log(e)
+            } catch {
+                // Fallback for older browsers
             }
 
             // Monitor Cumulative Layout Shift (CLS)
             let clsValue = 0;
             const clsObserver = new PerformanceObserver((list) => {
                 const entries = list.getEntries();
-                entries.forEach((entry: any) => {
-                    if (!entry.hadRecentInput) {
-                        clsValue += entry.value;
+                entries.forEach((entry) => {
+                    const layoutShiftEntry = entry as { hadRecentInput?: boolean; value?: number };
+                    if (!layoutShiftEntry.hadRecentInput && layoutShiftEntry.value) {
+                        clsValue += layoutShiftEntry.value;
                     }
                 });
                 console.log('CLS:', clsValue);
@@ -52,8 +53,8 @@ export function PerformanceMonitor() {
 
             try {
                 clsObserver.observe({ entryTypes: ['layout-shift'] });
-            } catch (e) {
-                console.log(e)
+            } catch {
+                // Fallback for older browsers
             }
 
             return () => {

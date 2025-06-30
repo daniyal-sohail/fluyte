@@ -30,56 +30,56 @@ export const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
     const containerRef = useRef<HTMLDivElement>(null);
     const scrollerRef = useRef<HTMLUListElement>(null);
 
-    useEffect(() => {
-        addAnimation();
-    }, [addAnimation]);
-
     const [start, setStart] = useState<boolean>(false);
 
-    function addAnimation(): void {
-        if (containerRef.current && scrollerRef.current) {
-            const scrollerContent = Array.from(scrollerRef.current.children);
+    useEffect(() => {
+        function addAnimation(): void {
+            if (containerRef.current && scrollerRef.current) {
+                const scrollerContent = Array.from(scrollerRef.current.children);
 
-            scrollerContent.forEach((item) => {
-                const duplicatedItem = item.cloneNode(true);
-                if (scrollerRef.current) {
-                    scrollerRef.current.appendChild(duplicatedItem);
+                scrollerContent.forEach((item) => {
+                    const duplicatedItem = item.cloneNode(true);
+                    if (scrollerRef.current) {
+                        scrollerRef.current.appendChild(duplicatedItem);
+                    }
+                });
+
+                getDirection();
+                getSpeed();
+                setStart(true);
+            }
+        }
+
+        const getDirection = (): void => {
+            if (containerRef.current) {
+                if (direction === "left") {
+                    containerRef.current.style.setProperty(
+                        "--animation-direction",
+                        "forwards"
+                    );
+                } else {
+                    containerRef.current.style.setProperty(
+                        "--animation-direction",
+                        "reverse"
+                    );
                 }
-            });
-
-            getDirection();
-            getSpeed();
-            setStart(true);
-        }
-    }
-
-    const getDirection = (): void => {
-        if (containerRef.current) {
-            if (direction === "left") {
-                containerRef.current.style.setProperty(
-                    "--animation-direction",
-                    "forwards"
-                );
-            } else {
-                containerRef.current.style.setProperty(
-                    "--animation-direction",
-                    "reverse"
-                );
             }
-        }
-    };
+        };
 
-    const getSpeed = (): void => {
-        if (containerRef.current) {
-            if (speed === "fast") {
-                containerRef.current.style.setProperty("--animation-duration", "60s");
-            } else if (speed === "normal") {
-                containerRef.current.style.setProperty("--animation-duration", "50s");
-            } else {
-                containerRef.current.style.setProperty("--animation-duration", "80s");
+        const getSpeed = (): void => {
+            if (containerRef.current) {
+                if (speed === "fast") {
+                    containerRef.current.style.setProperty("--animation-duration", "60s");
+                } else if (speed === "normal") {
+                    containerRef.current.style.setProperty("--animation-duration", "50s");
+                } else {
+                    containerRef.current.style.setProperty("--animation-duration", "80s");
+                }
             }
-        }
-    };
+        };
+
+        addAnimation();
+    }, [direction, speed]);
 
     // Define the animation styles directly in the component
     const animationStyles = `

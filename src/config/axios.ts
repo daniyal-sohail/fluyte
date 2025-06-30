@@ -3,7 +3,7 @@ import axios, { AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 
 
 // Create axios instance with default config
 const api: AxiosInstance = axios.create({
-    baseURL: 'http://localhost:3001/api', // Hardcoded API URL
+    baseURL: 'https://portfolio-backend-qmx5.onrender.com/api', // Hardcoded API URL
     timeout: 10000, // 10 seconds
     headers: {
         'Content-Type': 'application/json',
