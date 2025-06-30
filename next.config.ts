@@ -123,11 +123,6 @@ const nextConfig: NextConfig = {
         destination: '/projects',
         permanent: true,
       },
-      {
-        source: '/contact',
-        destination: '/schedule-meeting',
-        permanent: true,
-      },
     ];
   },
 };
