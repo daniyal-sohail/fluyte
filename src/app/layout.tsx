@@ -19,24 +19,41 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Daniyal Sohail - Full Stack Developer & Web Designer",
+    default: "Daniyal Sohail - MERN Stack Developer & UI/UX Designer | Lahore, Pakistan",
     template: "%s | Daniyal Sohail"
   },
-  description: "Daniyal Sohail is a professional Full Stack Developer specializing in React, Node.js, and modern web technologies. View portfolio, projects, and services.",
+  description: "Daniyal Sohail - MERN Stack Developer, Full Stack Developer, Content Creator & UI/UX Designer from Lahore, Pakistan. 2.5+ years experience in NextJS, NestJS, Node.js, TypeScript, ReactJS. 10+ projects completed, 8+ happy clients. View portfolio, tutorials & hire for web development services.",
   keywords: [
     "Daniyal Sohail",
+    "MERN Stack Developer",
     "Full Stack Developer",
-    "Web Developer",
+    "UI/UX Designer",
+    "Content Creator",
     "React Developer",
     "Node.js Developer",
-    "JavaScript Developer",
+    "NextJS Developer",
+    "NestJS Developer",
     "TypeScript Developer",
-    "Web Designer",
-    "Frontend Developer",
-    "Backend Developer",
-    "Portfolio",
+    "JavaScript Developer",
+    "Web Developer",
+    "Lahore Pakistan",
     "Web Development",
-    "Software Engineer"
+    "Portfolio",
+    "Hire Developer",
+    "Custom Web Applications",
+    "ReactJS Development",
+    "Node.js Development",
+    "NextJS Development",
+    "NestJS Development",
+    "MERN Stack Development",
+    "Full Stack Development",
+    "Tech Content Creator",
+    "Programming Tutorials",
+    "Web Development Tutorials",
+    "React Tutorials",
+    "Node.js Tutorials",
+    "NextJS Tutorials",
+    "TypeScript Tutorials"
   ],
   authors: [{ name: "Daniyal Sohail" }],
   creator: "Daniyal Sohail",
@@ -50,8 +67,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://daniyalsohail.me",
     siteName: "Daniyal Sohail Portfolio",
-    title: "Daniyal Sohail - Full Stack Developer & Web Designer",
-    description: "Professional Full Stack Developer specializing in React, Node.js, and modern web technologies. View portfolio, projects, and services.",
+    title: "Daniyal Sohail - MERN Stack Developer & UI/UX Designer | Lahore, Pakistan",
+    description: "Daniyal Sohail - MERN Stack Developer, Full Stack Developer, Content Creator & UI/UX Designer from Lahore, Pakistan. 2.5+ years experience in NextJS, NestJS, Node.js, TypeScript, ReactJS. 10+ projects completed, 8+ happy clients. View portfolio, tutorials & hire for web development services.",
     images: [
       {
         url: "/img/hero.png",
@@ -65,8 +82,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@daniyalsohail",
     creator: "@daniyalsohail",
-    title: "Daniyal Sohail - Full Stack Developer & Web Designer",
-    description: "Professional Full Stack Developer specializing in React, Node.js, and modern web technologies.",
+    title: "Daniyal Sohail - MERN Stack Developer & UI/UX Designer | Lahore, Pakistan",
+    description: "Daniyal Sohail - MERN Stack Developer, Full Stack Developer, Content Creator & UI/UX Designer from Lahore, Pakistan. 2.5+ years experience in NextJS, NestJS, Node.js, TypeScript, ReactJS. 10+ projects completed, 8+ happy clients.",
     images: ["/img/hero.png"],
   },
   robots: {
@@ -96,6 +113,9 @@ export default function RootLayout({
         {/* Preload critical resources */}
         <link rel="preload" href="/img/hero.png" as="image" />
         <link rel="preload" href="/img/logo.png" as="image" />
+
+        {/* Favicon for hero.png */}
+        <link rel="icon" type="image/png" href="/img/hero.png" sizes="512x512" />
 
         {/* DNS prefetch for external domains */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />

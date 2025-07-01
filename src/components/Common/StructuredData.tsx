@@ -35,8 +35,8 @@ export const PersonStructuredData: React.FC = () => (
         type="person"
         data={{
             name: "Daniyal Sohail",
-            jobTitle: "Full Stack Developer",
-            description: "Professional Full Stack Developer specializing in React, Node.js, and modern web technologies",
+            jobTitle: "MERN Stack Developer",
+            description: "MERN Stack Developer & UI/UX Designer specializing in NextJS, Node.js, TypeScript, ReactJS and modern web technologies",
             url: "https://daniyalsohail.me",
             image: "https://daniyalsohail.me/img/hero.png",
             sameAs: [
@@ -49,19 +49,19 @@ export const PersonStructuredData: React.FC = () => (
             knowsAbout: [
                 "React.js",
                 "Node.js",
-                "JavaScript",
+                "NextJS",
                 "TypeScript",
+                "JavaScript",
+                "NestJS",
                 "Web Development",
-                "Full Stack Development",
+                "MERN Stack Development",
+                "UI/UX Design",
                 "Frontend Development",
                 "Backend Development",
                 "MongoDB",
                 "PostgreSQL",
-                "AWS",
-                "Docker",
                 "Git",
-                "REST APIs",
-                "GraphQL"
+                "REST APIs"
             ],
             worksFor: {
                 "@type": "Organization",
@@ -78,7 +78,13 @@ export const PersonStructuredData: React.FC = () => (
                     "@type": "Country",
                     "name": "Pakistan"
                 }
-            }
+            },
+            award: [
+                "2.5+ Years Experience",
+                "10+ Projects Completed",
+                "8+ Happy Clients",
+                "MERN Stack Specialist"
+            ]
         }}
     />
 );

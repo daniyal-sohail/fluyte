@@ -1,36 +1,41 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Content Creation by Daniyal Sohail - Tech Content & Tutorials",
-    description: "Content creation services by Daniyal Sohail. Tech tutorials, web development guides, React tutorials, Node.js tutorials, and educational content for developers.",
+    title: "Content Creation by Daniyal Sohail - MERN Stack, Tutorials & Tech Education",
+    description: "Content creation and tutorials by Daniyal Sohail, MERN Stack Developer, Full Stack Developer, and Content Creator from Lahore, Pakistan. Learn web development, NextJS, NestJS, ReactJS, Node.js, TypeScript, and UI/UX design from real-world experience.",
     keywords: [
         "Daniyal Sohail Content Creation",
-        "Tech Tutorials",
+        "MERN Stack Tutorials",
+        "Full Stack Developer",
+        "Content Creator",
+        "UI/UX Designer",
+        "NextJS Tutorials",
+        "NestJS Tutorials",
+        "Lahore Pakistan",
         "Web Development Tutorials",
         "React Tutorials",
         "Node.js Tutorials",
         "JavaScript Tutorials",
         "Programming Tutorials",
-        "Developer Education",
         "Tech Content",
         "Educational Content"
     ],
     openGraph: {
-        title: "Content Creation by Daniyal Sohail - Tech Content & Tutorials",
-        description: "Content creation services by Daniyal Sohail. Tech tutorials, web development guides, React tutorials, Node.js tutorials, and educational content.",
+        title: "Content Creation by Daniyal Sohail - MERN Stack, Tutorials & Tech Education",
+        description: "Content creation and tutorials by Daniyal Sohail, MERN Stack Developer, Full Stack Developer, and Content Creator from Lahore, Pakistan. Learn web development, NextJS, NestJS, ReactJS, Node.js, TypeScript, and UI/UX design from real-world experience.",
         url: "https://daniyalsohail.me/content-creation",
         images: [
             {
                 url: "/img/hero.png",
                 width: 1200,
                 height: 630,
-                alt: "Content Creation by Daniyal Sohail - Tech Content & Tutorials",
+                alt: "Content Creation by Daniyal Sohail - MERN Stack, Tutorials & Tech Education",
             },
         ],
     },
     twitter: {
-        title: "Content Creation by Daniyal Sohail - Tech Content & Tutorials",
-        description: "Content creation services by Daniyal Sohail. Tech tutorials, web development guides, React tutorials, Node.js tutorials, and educational content.",
+        title: "Content Creation by Daniyal Sohail - MERN Stack, Tutorials & Tech Education",
+        description: "Content creation and tutorials by Daniyal Sohail, MERN Stack Developer, Full Stack Developer, and Content Creator from Lahore, Pakistan.",
     },
     alternates: {
         canonical: "https://daniyalsohail.me/content-creation",

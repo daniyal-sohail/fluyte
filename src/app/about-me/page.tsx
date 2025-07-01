@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "About Daniyal Sohail - Full Stack Developer",
-    description: "Learn more about Daniyal Sohail, a professional Full Stack Developer with expertise in React, Node.js, and modern web technologies. View experience, skills, and background.",
+    title: "About Daniyal Sohail - MERN Stack Developer, Content Creator & UI/UX Designer",
+    description: "Discover the journey of Daniyal Sohail, a MERN Stack Developer, Content Creator, and UI/UX Designer based in Lahore, Pakistan. 2.5+ years experience in NextJS, NestJS, Node.js, TypeScript, ReactJS. Learn about skills, experience, and unique approach to web development and content creation.",
     keywords: [
         "About Daniyal Sohail",
-        "Daniyal Sohail Background",
-        "Full Stack Developer Experience",
+        "MERN Stack Developer",
+        "Content Creator",
+        "UI/UX Designer",
+        "NextJS Developer",
+        "NestJS Developer",
+        "Full Stack Developer",
+        "Lahore Pakistan",
         "Web Developer Skills",
         "React Developer Portfolio",
         "Node.js Developer",
@@ -14,21 +19,21 @@ export const metadata: Metadata = {
         "TypeScript Developer"
     ],
     openGraph: {
-        title: "About Daniyal Sohail - Full Stack Developer",
-        description: "Learn more about Daniyal Sohail, a professional Full Stack Developer with expertise in React, Node.js, and modern web technologies.",
+        title: "About Daniyal Sohail - MERN Stack Developer, Content Creator & UI/UX Designer",
+        description: "Discover the journey of Daniyal Sohail, a MERN Stack Developer, Content Creator, and UI/UX Designer based in Lahore, Pakistan. 2.5+ years experience in NextJS, NestJS, Node.js, TypeScript, ReactJS.",
         url: "https://daniyalsohail.me/about-me",
         images: [
             {
                 url: "/img/hero.png",
                 width: 1200,
                 height: 630,
-                alt: "About Daniyal Sohail - Full Stack Developer",
+                alt: "About Daniyal Sohail - MERN Stack Developer, Content Creator & UI/UX Designer",
             },
         ],
     },
     twitter: {
-        title: "About Daniyal Sohail - Full Stack Developer",
-        description: "Learn more about Daniyal Sohail, a professional Full Stack Developer with expertise in React, Node.js, and modern web technologies.",
+        title: "About Daniyal Sohail - MERN Stack Developer, Content Creator & UI/UX Designer",
+        description: "Discover the journey of Daniyal Sohail, a MERN Stack Developer, Content Creator, and UI/UX Designer based in Lahore, Pakistan.",
     },
     alternates: {
         canonical: "https://daniyalsohail.me/about-me",

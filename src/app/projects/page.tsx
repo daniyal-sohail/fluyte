@@ -6,35 +6,40 @@ import React from 'react'
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Projects by Daniyal Sohail - Full Stack Developer",
-    description: "Explore projects by Daniyal Sohail, a professional Full Stack Developer. View web applications, mobile apps, and software solutions built with React, Node.js, and modern technologies.",
+    title: "Projects by Daniyal Sohail - MERN Stack, NextJS, Content Creation",
+    description: "Explore real-world projects by Daniyal Sohail, MERN Stack Developer, Content Creator, and UI/UX Designer in Lahore, Pakistan. Projects built with NextJS, NestJS, Node.js, TypeScript, ReactJS, and more. See portfolio impact and technologies used.",
     keywords: [
         "Daniyal Sohail Projects",
-        "Full Stack Developer Projects",
-        "React Projects",
-        "Node.js Projects",
+        "MERN Stack Projects",
+        "Content Creation",
+        "UI/UX Design",
+        "NextJS Projects",
+        "NestJS Projects",
+        "Full Stack Developer",
+        "Lahore Pakistan",
         "Web Development Projects",
         "Portfolio Projects",
+        "React Projects",
+        "Node.js Projects",
         "JavaScript Projects",
-        "TypeScript Projects",
-        "Web Applications"
+        "TypeScript Projects"
     ],
     openGraph: {
-        title: "Projects by Daniyal Sohail - Full Stack Developer",
-        description: "Explore projects by Daniyal Sohail, a professional Full Stack Developer. View web applications, mobile apps, and software solutions.",
+        title: "Projects by Daniyal Sohail - MERN Stack, NextJS, Content Creation",
+        description: "Explore real-world projects by Daniyal Sohail, MERN Stack Developer, Content Creator, and UI/UX Designer in Lahore, Pakistan. Projects built with NextJS, NestJS, Node.js, TypeScript, ReactJS, and more.",
         url: "https://daniyalsohail.me/projects",
         images: [
             {
                 url: "/img/hero.png",
                 width: 1200,
                 height: 630,
-                alt: "Projects by Daniyal Sohail - Full Stack Developer",
+                alt: "Projects by Daniyal Sohail - MERN Stack, NextJS, Content Creation",
             },
         ],
     },
     twitter: {
-        title: "Projects by Daniyal Sohail - Full Stack Developer",
-        description: "Explore projects by Daniyal Sohail, a professional Full Stack Developer. View web applications, mobile apps, and software solutions.",
+        title: "Projects by Daniyal Sohail - MERN Stack, NextJS, Content Creation",
+        description: "Explore real-world projects by Daniyal Sohail, MERN Stack Developer, Content Creator, and UI/UX Designer in Lahore, Pakistan.",
     },
     alternates: {
         canonical: "https://daniyalsohail.me/projects",
