@@ -42,14 +42,26 @@ function AboutExperience() {
         },
     ]
     return (
-        <div className="shadow-lg mb-8 mt-0">
+        <div
+            data-aos="fade-in"
+            data-aos-duration="800"
+            data-aos-delay="100"
+            className="shadow-lg mb-8 mt-0"
+        >
             <div className="container mx-auto px-4 md:px-8 lg:px-16 py-4">
                 {/* Heading */}
-                <div className="flex flex-col items-center text-center">
+                <div
+                    data-aos="slide-up"
+                    data-aos-duration="700"
+                    data-aos-delay="200"
+                    className="flex flex-col items-center text-center"
+                >
                     <SectionButton btnText={"My Experience"} />
                     {/* Large Heading */}
                     <h1
-                        data-aos="fade-up"
+                        data-aos="fade-in"
+                        data-aos-duration="800"
+                        data-aos-delay="300"
                         className="mb-8 mt-2 text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
                     >
                         Collaborated with <span style={{ color: "#48D1CC" }}>industry leading</span> teams
@@ -57,9 +69,21 @@ function AboutExperience() {
 
                 </div>
 
-                <div className="grid grid-cols-1 ">
+                <div
+                    data-aos="zoom-in"
+                    data-aos-duration="700"
+                    data-aos-delay="400"
+                    className="grid grid-cols-1 "
+                >
                     {exp.map((item, index) => (
-                        <ExpBox key={index} title={item.title} img={item.img} role={item.role} duration={item.duration} />
+                        <ExpBox
+                            key={index}
+                            title={item.title}
+                            img={item.img}
+                            role={item.role}
+                            duration={item.duration}
+                            index={index}
+                        />
                     ))}
                 </div>
             </div>

@@ -59,15 +59,29 @@ function Footer() {
                 <div className="relative z-10">
                     <div className="w-full lg:w-4/5 xl:w-3/4">
                         <div className="mb-8">
-                            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-[140%] mb-4 bg-gradient-to-r from-white via-gray-200 to-gray-300 bg-clip-text text-transparent">
+                            <h1
+                                data-aos="fade-in"
+                                data-aos-duration="800"
+                                data-aos-delay="100"
+                                className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-[140%] mb-4 bg-gradient-to-r from-white via-gray-200 to-gray-300 bg-clip-text text-transparent"
+                            >
                                 Ready to bring your ideas to life?
                             </h1>
-                            <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 leading-[150%] mb-8">
+                            <p
+                                data-aos="fade-in"
+                                data-aos-duration="800"
+                                data-aos-delay="200"
+                                className="text-lg sm:text-xl lg:text-2xl text-gray-300 leading-[150%] mb-8"
+                            >
                                 Let&apos;s collaborate and create something extraordinary together.
                             </p>
 
-                            <div className="flex flex-col sm:flex-row gap-4 items-start">
-
+                            <div
+                                data-aos="zoom-in"
+                                data-aos-duration="700"
+                                data-aos-delay="300"
+                                className="flex flex-col sm:flex-row gap-4 items-start"
+                            >
                                 <Button
                                     className="group flex items-center gap-2 !px-6 !py-6 rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300 hover:bg-white/5"
                                     onClick={openContactPopup}
@@ -89,7 +103,12 @@ function Footer() {
                     {/* Bottom Section */}
                     <div className="flex flex-col lg:flex-row justify-between items-center mt-12 pt-8 border-t border-white/10">
                         {/* Left Section - Contact */}
-                        <div className="w-full lg:w-auto mb-6 lg:mb-0 text-center lg:text-left">
+                        <div
+                            data-aos="slide-up"
+                            data-aos-duration="600"
+                            data-aos-delay="400"
+                            className="w-full lg:w-auto mb-6 lg:mb-0 text-center lg:text-left"
+                        >
                             <p className="text-sm text-gray-400 mb-2">Get in touch</p>
                             <Link
                                 href="mailto:daniyalsohaildev@gmail.com"
@@ -100,7 +119,12 @@ function Footer() {
                         </div>
 
                         {/* Middle Section - Copyright */}
-                        <div className="w-full lg:w-auto text-center mb-6 lg:mb-0">
+                        <div
+                            data-aos="flip-up"
+                            data-aos-duration="600"
+                            data-aos-delay="500"
+                            className="w-full lg:w-auto text-center mb-6 lg:mb-0"
+                        >
                             <p className="text-sm text-gray-400 mb-1">© 2025 All rights reserved</p>
                             <p className="text-sm text-gray-500">
                                 Created using NextJs & NestJs by{'  '}
@@ -114,7 +138,12 @@ function Footer() {
                         </div>
 
                         {/* Right Section - Social Links */}
-                        <div className="flex items-center gap-4">
+                        <div
+                            data-aos="slide-left"
+                            data-aos-duration="600"
+                            data-aos-delay="600"
+                            className="flex items-center gap-4"
+                        >
                             {socialLinks.map((social, index) => {
                                 const IconComponent = social.icon
                                 return (
@@ -123,6 +152,9 @@ function Footer() {
                                         href={social.href}
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        data-aos="zoom-in"
+                                        data-aos-duration="500"
+                                        data-aos-delay={700 + (index * 100)}
                                         className={`group p-3 rounded-xl bg-white/5 border border-white/10 hover:border-white/30 transition-all duration-300 hover:bg-white/10 hover:scale-110 ${social.color}`}
                                         aria-label={social.label}
                                     >

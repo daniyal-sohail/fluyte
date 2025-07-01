@@ -9,40 +9,74 @@ interface ProjectCardProps {
     btnThree?: string;
     img: string;
     priority?: boolean;
+    index?: number;
 }
 
-function ProjectCard({ title, content, buttons = [], btnOne, btnTwo, btnThree, img, priority = false }: ProjectCardProps) {
+function ProjectCard({ title, content, buttons = [], btnOne, btnTwo, btnThree, img, priority = false, index = 0 }: ProjectCardProps) {
     // Convert legacy button props to array if buttons array is not provided
     const buttonArray = buttons.length > 0
         ? buttons
         : [btnOne, btnTwo, btnThree].filter(btn => btn !== undefined) as string[];
 
     return (
-        <div className="project-card w-full flex items-center justify-center p-4 mb-8">
+        <div
+
+            className="project-card w-full flex items-center justify-center p-4 mb-8"
+        >
             <div className="bg-gray-900/10 backdrop-blur-sm rounded-xl shadow-lg p-6 md:p-8 w-full">
                 <div className="flex flex-col md:flex-row gap-6 md:gap-8">
-                    <div className="w-full md:w-2/5 space-y-4">
-                        <h1 className="text-white text-3xl font-medium tracking-tight leading-tight">
+                    <div
+                        data-aos="fade-in"
+                        data-aos-duration="550"
+                        data-aos-delay="500"
+                        className="w-full md:w-2/5 space-y-4"
+                    >
+                        <h1
+                            data-aos="slide-right"
+                            data-aos-duration="550"
+                            data-aos-delay="700"
+                            className="text-white text-3xl font-medium tracking-tight leading-tight"
+                        >
                             {title}
                         </h1>
 
-                        <div className="flex flex-wrap gap-2">
-                            {buttonArray.map((button, index) => (
+                        <div
+                            data-aos="slide-right"
+                            data-aos-duration="700"
+                            data-aos-delay="500"
+                            className="flex flex-wrap gap-2"
+                        >
+                            {buttonArray.map((button, buttonIndex) => (
                                 <span
-                                    key={index}
+                                    key={buttonIndex}
+                                    data-aos="flip-up"
+                                    data-aos-duration="550"
+                                    data-aos-delay="500"
                                     className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-teal-500/10 text-teal-400 border border-teal-500/20"
                                 >
                                     {button}
                                 </span>
                             ))}
                         </div>
-                        <p className="text-gray-300 mb-6 text-lg leading-relaxed">
+                        <p
+                            data-aos="zoom-in"
+                            data-aos-duration="550"
+                            data-aos-delay="500"
+                            className="text-gray-300 mb-6 text-lg leading-relaxed"
+                        >
                             {content}
                         </p>
                     </div>
 
-                    <div className="w-full md:w-4/5">
-                        <div className="relative overflow-hidden rounded-lg shadow-md">
+                    <div
+
+                        className="w-full md:w-4/5"
+                    >
+                        <div
+                            data-aos="fade-in"
+                            data-aos-duration="700"
+                            data-aos-delay="500"
+                            className="relative overflow-hidden rounded-lg shadow-md">
                             <Image
                                 src={img}
                                 alt={`${title} project screenshot`}

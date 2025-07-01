@@ -14,7 +14,7 @@ export function AboutSection() {
                     <SectionButton btnText={"About Me"} />
                     {/* Large Heading */}
                     <h1
-                        data-aos="fade-up"
+                        data-aos="fade-up" data-aos-duration="700" data-aos-delay="300"
                         className="mb-2 mt-2 text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold max-w-md sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl"
                     >
                         Get to  <span style={{ color: "#48D1CC" }}> know me</span> beyond the code
@@ -27,9 +27,9 @@ export function AboutSection() {
                         containerClassName="col-span-1 lg:col-span-2 h-full min-h-[350px] sm:min-h-[300px] lg:min-h-[280px]"
                         className="bg-black border border-gray-800"
                     >
-                        <div className="flex-1 lg:pr-8 xl:pr-12">
+                        <div data-aos="fade-in" data-aos-duration="700" data-aos-delay="100" className="flex-1 lg:pr-8 xl:pr-12">
                             <div className="space-y-4 sm:space-y-6">
-                                <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold tracking-tight text-white leading-tight">
+                                <h2 data-aos="slide-right" data-aos-duration="700" data-aos-delay="200" className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold tracking-tight text-white leading-tight">
                                     From stunning{" "}
                                     <span className="bg-gradient-to-r text-[#3BBAB6] bg-clip-text ">
                                         FRONTEND
@@ -40,11 +40,11 @@ export function AboutSection() {
                                     </span>
                                 </h2>
 
-                                <p className="text-sm sm:text-base lg:text-lg text-gray-300 leading-relaxed max-w-2xl">
+                                <p data-aos="slide-right" data-aos-duration="700" data-aos-delay="250" className="text-sm sm:text-base lg:text-lg text-gray-300 leading-relaxed max-w-2xl">
                                     I&apos;m Daniyal Sohail, a MERN Stack and Next.js developer. I build full websites from animated frontends with Framer Motion and GSAP, to backend development and deployment.
                                 </p>
 
-                                <p className="text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed max-w-2xl">
+                                <p data-aos="slide-right" data-aos-duration="700" data-aos-delay="250" className="text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed max-w-2xl">
                                     Besides development, I&apos;m passionate about tech content creation, where I share tips, projects, and what I learn along the way.
                                 </p>
 
@@ -58,6 +58,7 @@ export function AboutSection() {
                         </div>
                     </WobbleCard>
                     <WobbleCard
+                        data-aos="slide-left" data-aos-duration="700" data-aos-delay="200"
                         containerClassName="col-span-1 min-h-[300px] bg-black"
                         className="bg-black z-[999]"
                         showNoise={true}

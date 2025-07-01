@@ -265,6 +265,7 @@ export function Carousel({ slides, autoPlay = false, autoPlayInterval = 5000 }: 
         >
             {/* Main carousel container */}
             <div
+                data-aos="zoom-in" data-aos-duration="700" data-aos-delay="100"
                 ref={containerRef}
                 className="
                     relative overflow-hidden rounded-xl sm:rounded-2xl lg:rounded-3xl

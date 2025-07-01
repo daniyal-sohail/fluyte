@@ -50,7 +50,7 @@ export function HomeServices() {
                     <SectionButton btnText={"What I Offer"} />
                     {/* Large Heading */}
                     <h1
-                        data-aos="fade-up"
+                        data-aos="fade-up" data-aos-duration="700" data-aos-delay="100"
                         className="mb-8 mt-2 text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl"
 
                     >

@@ -21,7 +21,7 @@ export function WeCollaborate() {
                     <SectionButton btnText={"Build With Me"} />
                     {/* Large Heading */}
                     <h1
-                        data-aos="fade-up"
+                        data-aos="fade-up" data-aos-duration="700" data-aos-delay="100"
                         className="mb-8 mt-2 text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl"
                     >
                         Here’s How   <span style={{ color: "#48D1CC" }}>We Collaborate</span> Effectively
@@ -85,7 +85,8 @@ interface GridItemProps {
 
 const GridItem = ({ area, icon, title, description }: GridItemProps) => {
     return (
-        <li className={`min-h-[14rem] list-none ${area}`}>
+        <li data-aos="zoom-in" data-aos-duration="700" data-aos-delay="100"
+            className={`min-h-[14rem] list-none ${area}`}>
             <div className="relative h-full rounded-2.5xl border  p-2  md:rounded-3xl md:p-3">
                 <GlowingEffect
                     spread={40}
@@ -94,16 +95,18 @@ const GridItem = ({ area, icon, title, description }: GridItemProps) => {
                     proximity={64}
                     inactiveZone={0.01}
                 />
-                <div data-aos="slide-up" className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-0.75 p-6  dark:shadow-[0px_0px_27px_0px_#2D2D2D] md:p-6">
+                <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-0.75 p-6  dark:shadow-[0px_0px_27px_0px_#2D2D2D] md:p-6">
                     <div className="relative flex flex-1 flex-col justify-between gap-3">
-                        <div className="w-fit rounded-lg border border-[#4E15BF] text-[#4E15BF] p-2 ">
+                        <div data-aos="flip-up" data-aos-duration="700" data-aos-delay="200"
+                            className="w-fit rounded-lg border border-[#4E15BF] text-[#4E15BF] p-2 ">
                             {icon}
                         </div>
                         <div className="space-y-3">
-                            <h3 className="pt-0.5 text-xl/[1.375rem] font-semibold font-sans -tracking-4 md:text-2xl/[1.875rem] text-balance text-[#4E15BF] dark:text-white">
+                            <h3 data-aos="slide-up" data-aos-duration="700" data-aos-delay="200" className="pt-0.5 text-xl/[1.375rem] font-semibold font-sans -tracking-4 md:text-2xl/[1.875rem] text-balance text-[#4E15BF] dark:text-white">
                                 {title}
                             </h3>
                             <h2
+                                data-aos="slide-up" data-aos-duration="700" data-aos-delay="200"
                                 className="[&_b]:md:font-semibold [&_strong]:md:font-semibold font-sans text-sm/[1.125rem] 
               md:text-base/[1.375rem]  text-black dark:text-neutral-400"
                             >

@@ -23,7 +23,7 @@ export function ContextSection() {
                     <SectionButton btnText={"Content Creation"} />
                     {/* Large Heading */}
                     <h1
-                        data-aos="fade-up"
+                        data-aos="fade-up" data-aos-duration="700" data-aos-delay="100"
                         className="mb-8 mt-2 text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl"
                     >
                         Discover <span style={{ color: "#48D1CC" }}>impactful content that</span>  informs and inspires
@@ -38,6 +38,7 @@ export function ContextSection() {
                         <div className="relative">
                             {/* Frame image as background */}
                             <Image
+                                data-aos="zoom-in" data-aos-duration="700" data-aos-delay="100"
                                 src="/img/frame.png"
                                 alt="Mobile frame"
                                 width={350}
@@ -47,15 +48,18 @@ export function ContextSection() {
 
                             {/* Video overlay positioned exactly */}
                             <div className="absolute inset-0 flex items-center justify-center">
-                                <div style={{
-                                    position: 'absolute',
-                                    top: '1%',
-                                    left: '4%',
-                                    width: '92%',
-                                    height: '98%',
-                                    borderRadius: '40px',
-                                    overflow: 'hidden'
-                                }}>
+                                <div
+                                    data-aos="fade-in" data-aos-duration="700" data-aos-delay="300"
+                                    style={{
+
+                                        position: 'absolute',
+                                        top: '1%',
+                                        left: '4%',
+                                        width: '92%',
+                                        height: '98%',
+                                        borderRadius: '40px',
+                                        overflow: 'hidden'
+                                    }}>
                                     <video
                                         ref={videoRef}
                                         className="w-full h-full object-cover"

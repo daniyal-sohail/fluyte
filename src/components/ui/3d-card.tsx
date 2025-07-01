@@ -85,6 +85,7 @@ export const CardBody = ({
 }) => {
     return (
         <div
+            data-aos="fade-up"
             className={cn(
                 "h-96 w-80 [transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d]",
                 className

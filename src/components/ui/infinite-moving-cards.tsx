@@ -98,6 +98,7 @@ export const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
 
     return (
         <div
+            data-aos="fade-up" data-aos-duration="700" data-aos-delay="100"
             ref={containerRef}
             className={cn(
                 "scroller relative z-20 max-w-7xl overflow-hidden",

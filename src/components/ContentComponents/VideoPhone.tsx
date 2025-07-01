@@ -26,6 +26,7 @@ export const VideoPhone: React.FC<VideoPhoneProps> = ({ videoSrc, title }) => {
                     <div className="relative">
                         {/* Frame image as background */}
                         <Image
+                            data-aos="zoom-in" data-aos-duration="700" data-aos-delay="100"
                             src="/img/frame.png"
                             alt="Mobile frame"
                             width={200}
@@ -35,15 +36,17 @@ export const VideoPhone: React.FC<VideoPhoneProps> = ({ videoSrc, title }) => {
 
                         {/* Video overlay positioned exactly */}
                         <div className="absolute inset-0 flex items-center justify-center">
-                            <div style={{
-                                position: 'absolute',
-                                top: '1%',
-                                left: '4%',
-                                width: '92%',
-                                height: '98%',
-                                borderRadius: '40px',
-                                overflow: 'hidden'
-                            }}>
+                            <div
+                                data-aos="fade-in" data-aos-duration="700" data-aos-delay="300"
+                                style={{
+                                    position: 'absolute',
+                                    top: '1%',
+                                    left: '4%',
+                                    width: '92%',
+                                    height: '98%',
+                                    borderRadius: '40px',
+                                    overflow: 'hidden'
+                                }}>
                                 <video
                                     ref={videoRef}
                                     className="w-full h-full object-cover"

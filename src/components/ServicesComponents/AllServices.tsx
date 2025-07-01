@@ -50,19 +50,41 @@ const items = [
 
 export function AllServices() {
     return (
-        <section className="relative min-h-screen  py-6">
+        <section
+            data-aos="fade-in"
+            data-aos-duration="800"
+            data-aos-delay="100"
+            className="relative min-h-screen  py-6"
+        >
             {/* Background Pattern */}
-            <div className="absolute inset-0 " />
+            <div
+                data-aos="zoom-in"
+                data-aos-duration="1000"
+                data-aos-delay="200"
+                className="absolute inset-0 "
+            />
 
             <div className="container mx-auto px-4 md:px-8 lg:px-16 relative z-10">
                 {/* Header Section */}
-                <div className="text-center mb-16">
-                    <div className="inline-block mb-6" data-aos="fade-up">
+                <div
+                    data-aos="slide-up"
+                    data-aos-duration="700"
+                    data-aos-delay="300"
+                    className="text-center mb-16"
+                >
+                    <div
+                        data-aos="fade-down"
+                        data-aos-duration="600"
+                        data-aos-delay="400"
+                        className="inline-block mb-6"
+                    >
                         <SectionButton btnText="Quality Services" />
                     </div>
 
                     <h1
-                        data-aos="fade-up"
+                        data-aos="fade-in"
+                        data-aos-duration="800"
+                        data-aos-delay="500"
                         className="mb-8 mt-2 text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold max-w-lg sm:max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-5xl"
                     >
                         Discover <span style={{ color: "#48D1CC" }}>high quality services that</span> deliver real results
@@ -72,7 +94,10 @@ export function AllServices() {
                 </div>
 
                 {/* Services Grid using your ServiceCard */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+                <div
+
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8"
+                >
                     {items.map((item, index) => (
                         <ServiceCard
                             key={index}

@@ -133,7 +133,7 @@ export function Testimonial() {
                     <SectionButton btnText={"Testimonial"} />
                     {/* Large Heading */}
                     <h1
-                        data-aos="fade-up"
+                        data-aos="fade-up" data-aos-duration="700" data-aos-delay="100"
                         className="mb-8 mt-2 text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold max-w-md sm:max-w-sm md:max-w-md lg:max-w-xl xl:max-w-2xl"
                     >
                         What <span style={{ color: "#48D1CC" }}>my clients</span> say about me

@@ -45,10 +45,7 @@ export function TechFundamentals() {
                         Master <span style={{ color: "#48D1CC" }}>Core Tech</span> Concepts
                     </h1>
 
-                    {/* Centered Paragraph */}
-                    <p className="text-gray-300 text-sm sm:text-base max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mb-12">
-                        Essential knowledge every developer should know
-                    </p>
+
                 </div>
 
                 {/* Video Grid */}

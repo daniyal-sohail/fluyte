@@ -42,7 +42,7 @@ export default function CTA({
 
     return (
         <div className={`cta-container`}>
-            <div className={`flex ${className} z-[10]`}>
+            <div data-aos="fade-in" data-aos-duration="1000" data-aos-delay="100" className={`flex ${className} z-[10]`}>
                 {shouldUseAnchor ? (
                     <a
                         href={href}

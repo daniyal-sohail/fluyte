@@ -35,7 +35,12 @@ const AboutHero = ({
                     <div className="lg:col-span-3 space-y-6 sm:space-y-8 lg:space-y-10 order-2 lg:order-1">
 
                         {/* Status Badge - Hidden on mobile */}
-                        <div className="hidden sm:flex justify-start">
+                        <div
+                            data-aos="fade-down"
+                            data-aos-duration="800"
+                            data-aos-delay="100"
+                            className="hidden sm:flex justify-start"
+                        >
                             <div className="inline-flex items-center space-x-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border text-xs sm:text-sm"
                                 style={{
                                     backgroundColor: 'rgba(59, 186, 182, 0.1)',
@@ -54,7 +59,11 @@ const AboutHero = ({
                         <div className="space-y-6 sm:space-y-8">
                             {/* Name and Title - Hidden on mobile */}
                             <div className="hidden sm:block space-y-3 sm:space-y-4">
-                                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight bg-clip-text text-transparent"
+                                <h1
+                                    data-aos="fade-in"
+                                    data-aos-duration="800"
+                                    data-aos-delay="200"
+                                    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight bg-clip-text text-transparent"
                                     style={{
                                         background: 'linear-gradient(180deg, #ffffff, #adadad)',
                                         WebkitBackgroundClip: 'text',
@@ -63,7 +72,12 @@ const AboutHero = ({
                                     {name}
                                 </h1>
 
-                                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                                <div
+                                    data-aos="slide-up"
+                                    data-aos-duration="800"
+                                    data-aos-delay="200"
+                                    className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4"
+                                >
                                     <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold" style={{ color: '#3BBAB6' }}>
                                         {title}
                                     </h2>
@@ -73,10 +87,23 @@ const AboutHero = ({
                             </div>
 
                             {/* Bio - Hidden on mobile */}
-                            <p className="hidden sm:block text-sm sm:text-base lg:text-lg leading-relaxed max-w-3xl" style={{ color: '#adadad' }}>{bio}</p>
+                            <p
+                                data-aos="fade-in"
+                                data-aos-duration="800"
+                                data-aos-delay="250"
+                                className="hidden sm:block text-sm sm:text-base lg:text-lg leading-relaxed max-w-3xl"
+                                style={{ color: '#adadad' }}
+                            >
+                                {bio}
+                            </p>
 
                             {/* Stats Grid */}
-                            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+                            <div
+                                data-aos="zoom-in"
+                                data-aos-duration="700"
+                                data-aos-delay="250"
+                                className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"
+                            >
                                 {[
                                     { label: "Years Experience", value: experience, suffix: "+", icon: Calendar },
                                     { label: "Projects Completed", value: projectsCompleted, suffix: "", icon: Rocket },
@@ -88,6 +115,9 @@ const AboutHero = ({
                                     return (
                                         <div
                                             key={index}
+                                            data-aos="flip-up"
+                                            data-aos-duration="600"
+                                            data-aos-delay={600 + (index * 100)}
                                             className="group relative p-3 sm:p-4 lg:p-6 rounded-xl sm:rounded-2xl border cursor-pointer transition-all duration-300 hover:shadow-lg"
                                             style={{
                                                 background: 'linear-gradient(180deg, #242424, #121212 65.62%)',
@@ -116,7 +146,12 @@ const AboutHero = ({
                             </div>
 
                             {/* Tech Stack */}
-                            <div className="space-y-3 sm:space-y-4">
+                            <div
+                                data-aos="slide-up"
+                                data-aos-duration="700"
+                                data-aos-delay="300"
+                                className="space-y-3 sm:space-y-4"
+                            >
                                 <p className="text-xs sm:text-sm uppercase tracking-wider font-semibold" style={{ color: '#adadad' }}>Tech Stack</p>
                                 <div className="flex flex-wrap gap-2 sm:gap-3">
                                     {technologies.map((tech, index) => {
@@ -124,6 +159,9 @@ const AboutHero = ({
                                         return (
                                             <span
                                                 key={index}
+                                                data-aos="zoom-in"
+                                                data-aos-duration="500"
+                                                data-aos-delay={1100 + (index * 50)}
                                                 className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl text-white text-xs sm:text-sm font-medium border transition-all duration-300 hover:shadow-lg"
                                                 style={{
                                                     background: 'linear-gradient(180deg, #242424, #121212 65.62%)',
@@ -140,7 +178,13 @@ const AboutHero = ({
                             </div>
 
                             {/* Contact Info */}
-                            <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-6 text-sm sm:text-base" style={{ color: '#adadad' }}>
+                            <div
+                                data-aos="fade-in"
+                                data-aos-duration="600"
+                                data-aos-delay="330"
+                                className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-6 text-sm sm:text-base"
+                                style={{ color: '#adadad' }}
+                            >
                                 <div className="flex items-center space-x-2">
                                     <MapPin size={14} className="sm:w-4 sm:h-4 flex-shrink-0" style={{ color: '#3BBAB6' }} />
                                     <span className="truncate">{location}</span>
@@ -152,7 +196,12 @@ const AboutHero = ({
                             </div>
 
                             {/* Social Links */}
-                            <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 sm:gap-3 lg:gap-4">
+                            <div
+                                data-aos="slide-right"
+                                data-aos-duration="700"
+                                data-aos-delay="350"
+                                className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 sm:gap-3 lg:gap-4"
+                            >
                                 {[
                                     { name: "GitHub", handle: github, icon: Github, href: "https://github.com/daniyal-sohail" },
                                     { name: "LinkedIn", handle: linkedin, icon: Linkedin, href: "https://www.linkedin.com/in/mdaniyal-sohail/" },
@@ -164,6 +213,9 @@ const AboutHero = ({
                                     return (
                                         <a
                                             key={index}
+                                            data-aos="flip-left"
+                                            data-aos-duration="600"
+                                            data-aos-delay={1600 + (index * 100)}
                                             href={social.href}
                                             target="_blank"
                                             className="flex items-center justify-center sm:justify-start space-x-2 px-3 py-2 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl border transition-all duration-300 hover:shadow-lg text-center sm:text-left"
@@ -185,10 +237,18 @@ const AboutHero = ({
                     </div>
 
                     {/* Right side - Profile Image */}
-                    <div className="lg:col-span-2 order-1 lg:order-2">
+                    <div
+                        data-aos="fade-left"
+                        data-aos-duration="1000"
+                        data-aos-delay="300"
+                        className="lg:col-span-2 order-1 lg:order-2"
+                    >
                         {/* Enhanced Profile Image Card */}
                         <div className="relative max-w-sm mx-auto lg:max-w-none">
                             <div
+                                data-aos="zoom-in"
+                                data-aos-duration="800"
+                                data-aos-delay="600"
                                 className="border rounded-2xl sm:rounded-3xl p-4 sm:p-6 transition-all duration-300 hover:shadow-lg"
                                 style={{
                                     background: 'linear-gradient(180deg, #242424, #121212 65.62%)',
@@ -228,7 +288,12 @@ const AboutHero = ({
                                 </div>
 
                                 {/* User Info in Card */}
-                                <div className="mt-4 sm:mt-6 text-center">
+                                <div
+                                    data-aos="fade-up"
+                                    data-aos-duration="600"
+                                    data-aos-delay="800"
+                                    className="mt-4 sm:mt-6 text-center"
+                                >
                                     <h3 className="text-lg sm:text-xl font-bold text-white mb-1 truncate">{name}</h3>
                                     <p className="font-medium text-sm sm:text-base truncate" style={{ color: '#3BBAB6' }}>{title}</p>
                                     <div className="flex items-center justify-center mt-2 sm:mt-3 space-x-2">

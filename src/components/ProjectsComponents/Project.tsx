@@ -97,14 +97,22 @@ export function Project() {
 
 
     return (
-        <div>
+        <div
+
+            className=""
+        >
             <div className="container mx-auto px-4 md:px-8 lg:px-16 py-12">
                 {/* Heading */}
-                <div className="flex flex-col items-center text-center mb-4">
+                <div
+
+                    className="flex flex-col items-center text-center mb-4"
+                >
                     <SectionButton btnText={"Quality Services"} />
                     {/* Large Heading */}
                     <h1
                         data-aos="fade-up"
+                        data-aos-duration="800"
+                        data-aos-delay="700"
                         className="mb-8 mt-2 text-4xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl"
                     >
                         Explore <span style={{ color: "#48D1CC" }}>top notch</span> services
@@ -112,7 +120,12 @@ export function Project() {
                 </div>
 
                 {/* Projects section - standard layout without sticky scroll */}
-                <div className="projects-container">
+                <div
+                    data-aos="zoom-in"
+                    data-aos-duration="700"
+                    data-aos-delay="800"
+                    className="projects-container"
+                >
                     {projects.map((item, index) => (
                         <ProjectCard
                             key={index}
@@ -121,6 +134,7 @@ export function Project() {
                             buttons={item.buttons}
                             img={item.img}
                             priority={index < 3}
+                            index={index}
                         />
                     ))}
                 </div>

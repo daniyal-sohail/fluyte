@@ -4,6 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { PersonStructuredData, WebsiteStructuredData, ServiceStructuredData } from "@/components/Common/StructuredData";
 import GoogleAnalytics from "@/components/Common/GoogleAnalytics";
+import AOSInitializer from "@/components/Common/AOSInitializer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -143,6 +144,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased scrollbar-hide no-scrollbar force-no-scrollbar`}
       >
+        <AOSInitializer />
         {/* Google Analytics */}
         <GoogleAnalytics />
 

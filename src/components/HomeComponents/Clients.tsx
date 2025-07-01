@@ -76,6 +76,7 @@ export default function Clients() {
                             className="relative shrink-0"
                         >
                             <Link
+                                data-aos="fade-up" data-aos-duration="700" data-aos-delay="200"
                                 href={item.url}
                                 target="_blank"
                                 rel="noopener noreferrer"

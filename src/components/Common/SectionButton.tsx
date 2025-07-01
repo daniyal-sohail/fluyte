@@ -24,7 +24,7 @@ export function SectionButton({ btnText, href, onClick }: SectionButtonProps) {
             </span>
 
             {/* Enhanced main button content */}
-            <div className="relative flex space-x-3 items-center z-10 rounded-full bg-gradient-to-br from-gray-900 via-black to-gray-900 py-2.5 px-8 ring-1 ring-white/20 transition-all duration-300 ease-out group-hover:ring-white/30 group-hover:shadow-lg group-hover:shadow-sky-500/25 group-active:scale-95">
+            <div data-aos="zoom-in" data-aos-duration="700" data-aos-delay="100" className="relative flex space-x-3 items-center z-10 rounded-full bg-gradient-to-br from-gray-900 via-black to-gray-900 py-2.5 px-8 ring-1 ring-white/20 transition-all duration-300 ease-out group-hover:ring-white/30 group-hover:shadow-lg group-hover:shadow-sky-500/25 group-active:scale-95">
                 {/* Text with enhanced typography */}
                 <span className="text-[15px] font-medium tracking-wide transition-all duration-300 ease-out group-hover:text-sky-100">
                     {btnText}

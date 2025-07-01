@@ -32,9 +32,10 @@ export default function HeroSection(): React.ReactElement {
 
                 <div className="text-center mx-auto">
                     {/* Main heading - larger on big screens */}
-                    <h1 className="text-4xl sm:text-3xl md:text-5xl xl:text-7xl 2xl:text-8xl font-extrabold leading-snug sm:leading-snug md:leading-tight xl:leading-tight mb-6 md:mb-8 text-white">
+                    <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="100" className="text-4xl sm:text-3xl md:text-5xl xl:text-7xl 2xl:text-8xl font-extrabold leading-snug sm:leading-snug md:leading-tight xl:leading-tight mb-6 md:mb-8 text-white">
                         I&apos;m Daniyal Sohail, a passionate & dedicated
                         <div
+                            data-aos="fade-up" data-aos-duration="700" data-aos-delay="200"
                             className="text-transparent leading-normal sm:leading-normal md:leading-tight"
                             style={{
                                 WebkitTextStroke: '0.5px white',

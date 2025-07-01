@@ -58,11 +58,21 @@ function Certificates() {
     }
 
     return (
-        <div className="shadow-lg mb-8 mt-0">
+        <div
+            data-aos="fade-in"
+            data-aos-duration="800"
+            data-aos-delay="100"
+            className="shadow-lg mb-8 mt-0"
+        >
             <div className="container mx-auto px-4 md:px-8 lg:px-16 py-4">
                 {/* Heading */}
 
-                <div className="w-full py-2 overflow-hidden bg-black rounded-xl mt-2 mb-8">
+                <div
+                    data-aos="zoom-in"
+                    data-aos-duration="700"
+                    data-aos-delay="200"
+                    className="w-full py-2 overflow-hidden bg-black rounded-xl mt-2 mb-8"
+                >
                     <div
                         ref={containerRef}
                         className={cn(
@@ -79,6 +89,9 @@ function Certificates() {
                         >
                             {clientsImg.map((item, idx) => (
                                 <li
+                                    data-aos="fade-in"
+                                    data-aos-duration="600"
+                                    data-aos-delay={300 + (idx * 100)}
                                     className="relative shrink-0"
                                     key={idx}
                                 >

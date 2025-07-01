@@ -6,17 +6,26 @@ interface ExpBoxProps {
     title: string;
     role: string;
     duration: string;
+    index: number;
 }
 
-function ExpBox({ img, title, role, duration }: ExpBoxProps) {
+function ExpBox({ img, title, role, duration, index }: ExpBoxProps) {
     return (
-        <div className="group relative overflow-hidden">
-
-
+        <div
+            data-aos="slide-up"
+            data-aos-duration="600"
+            data-aos-delay={500 + (index * 100)}
+            className="group relative overflow-hidden"
+        >
             <div className="relative flex justify-between items-center w-full py-6 px-4 sm:py-8 sm:px-6 border-b border-gray-300 group-hover:border-gray-400 transition-all duration-300">
                 <div className="flex items-center flex-1 min-w-0 pr-3 sm:pr-4">
                     {/* Enhanced image container */}
-                    <div className="relative flex-shrink-0">
+                    <div
+                        data-aos="zoom-in"
+                        data-aos-duration="500"
+                        data-aos-delay={500 + (index * 100)}
+                        className="relative flex-shrink-0"
+                    >
                         <Image
                             src={img}
                             alt={`${title} at ${role}`}
@@ -27,7 +36,12 @@ function ExpBox({ img, title, role, duration }: ExpBoxProps) {
                     </div>
 
                     {/* Enhanced text content */}
-                    <div className="ml-3 xs:ml-4 sm:ml-6 flex-1 min-w-0">
+                    <div
+                        data-aos="fade-in"
+                        data-aos-duration="500"
+                        data-aos-delay={500 + (index * 100)}
+                        className="ml-3 xs:ml-4 sm:ml-6 flex-1 min-w-0"
+                    >
                         <h1 className="text-base xs:text-lg sm:text-xl font-semibold leading-tight text-gray-600 group-hover:text-gray-700 transition-colors duration-200 mb-0.5 sm:mb-1 truncate">
                             {title}
                         </h1>
@@ -38,7 +52,12 @@ function ExpBox({ img, title, role, duration }: ExpBoxProps) {
                 </div>
 
                 {/* Enhanced duration with badge style */}
-                <div className="flex-shrink-0">
+                <div
+                    data-aos="flip-left"
+                    data-aos-duration="500"
+                    data-aos-delay={600 + (index * 100)}
+                    className="flex-shrink-0"
+                >
                     <div className="inline-flex items-center px-2 py-1 xs:px-3 xs:py-1.5 rounded-full text-xs font-medium bg-teal-500/10 text-teal-400 border border-teal-500/20 whitespace-nowrap">
                         {duration}
                     </div>
