@@ -53,6 +53,13 @@ export const metadata: Metadata = {
     "React Tutorials",
     "Node.js Tutorials",
     "NextJS Tutorials",
+    "Daniyal Sohail",
+    "Daniyal Sohail Portfolio",
+    "Daniyal Sohail Website",
+    "Daniyal Sohail Portfolio Website",
+    "Daniyal Sohail UCP Lahore",
+    "Daniyal Sohail UCP Student",
+    "Daniyal Sohail UCP Student",
     "TypeScript Tutorials"
   ],
   authors: [{ name: "Daniyal Sohail" }],
@@ -114,8 +121,11 @@ export default function RootLayout({
         <link rel="preload" href="/img/hero.png" as="image" />
         <link rel="preload" href="/img/logo.png" as="image" />
 
-        {/* Favicon for hero.png */}
-        <link rel="icon" type="image/png" href="/img/hero.png" sizes="512x512" />
+        {/* Favicon configuration */}
+        <link rel="icon" type="image/png" href="/img/logo.png" sizes="28x28" />
+        <link rel="icon" type="image/png" href="/img/logo.png" sizes="16x16" />
+        <link rel="apple-touch-icon" href="/img/logo.png" />
+        <link rel="shortcut icon" href="/img/logo.png" />
 
         {/* DNS prefetch for external domains */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
