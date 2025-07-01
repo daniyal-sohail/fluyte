@@ -12,7 +12,7 @@ interface ProjectCardProps {
     index?: number;
 }
 
-function ProjectCard({ title, content, buttons = [], btnOne, btnTwo, btnThree, img, priority = false, index = 0 }: ProjectCardProps) {
+function ProjectCard({ title, content, buttons = [], btnOne, btnTwo, btnThree, img, priority = false, }: ProjectCardProps) {
     // Convert legacy button props to array if buttons array is not provided
     const buttonArray = buttons.length > 0
         ? buttons
