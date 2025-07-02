@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu as MenuIcon, PhoneCall, X } from "lucide-react";
 import Link from "next/link";
@@ -66,6 +66,17 @@ const navItems: NavItem[] = [
 export function Navbar(): React.ReactElement {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
     const [isContactPopupOpen, setIsContactPopupOpen] = useState<boolean>(false);
+    const [isScrolled, setIsScrolled] = useState<boolean>(false);
+
+    // Handle scroll effect for navbar background
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const openContactPopup = () => {
         setIsContactPopupOpen(true);
@@ -83,13 +94,24 @@ export function Navbar(): React.ReactElement {
             )}
 
             {/* Navbar positioned over hero section */}
-            <header className={`absolute top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${isMobileMenuOpen ? 'bg-black' : ''}`}>
+            <header
+                className={`absolute top-0 left-0 right-0 w-full z-50 transition-all duration-500 ${isMobileMenuOpen || isScrolled ? 'bg-black/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+                    }`}
+                data-aos="fade-down"
+                data-aos-duration="800"
+                data-aos-delay="100"
+            >
                 <div className="w-full py-4">
                     <div className="container mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-between">
                         {/* Logo on left */}
-                        <div className="flex items-center">
-                            <Link href="/" className="flex items-center space-x-2 p-2 rounded-full bg-white">
-                                <div className="relative w-14 h-14 ">
+                        <div
+                            className="flex items-center"
+                            data-aos="fade-right"
+                            data-aos-duration="800"
+                            data-aos-delay="200"
+                        >
+                            <Link href="/" className="flex items-center space-x-2 p-2 rounded-full bg-white hover:scale-105 transition-transform duration-300">
+                                <div className="relative w-14 h-14">
                                     <Image
                                         src="/img/logo.png" // Replace with your logo path
                                         alt="Logo"
@@ -102,11 +124,22 @@ export function Navbar(): React.ReactElement {
                         </div>
 
                         {/* Navigation in middle - Hidden on screens smaller than ~1024px */}
-                        <div className="hidden lg:flex justify-center">
-                            <nav className="relative rounded-full border-1 border-gray-700   bg-[#000] shadow-input flex justify-center space-x-4 px-12 py-5">
+                        <div
+                            className="hidden lg:flex justify-center"
+                            data-aos="fade-down"
+                            data-aos-duration="800"
+                            data-aos-delay="400"
+                        >
+                            <nav className="relative rounded-full border-1 border-gray-700 bg-[#000] shadow-input flex justify-center space-x-4 px-12 py-5 hover:shadow-lg transition-all duration-300">
                                 {navItems.map((item, index) => (
-                                    <Link href={item.href} key={index}>
-                                        <p className="cursor-pointer text-white hover:opacity-[0.9] px-2 font-medium">
+                                    <Link
+                                        href={item.href}
+                                        key={index}
+                                        data-aos="fade-down"
+                                        data-aos-duration="600"
+                                        data-aos-delay={500 + (index * 100)}
+                                    >
+                                        <p className="cursor-pointer text-white hover:text-[#3BBAB6] px-2 font-medium transition-all duration-300 hover:scale-105">
                                             {item.name}
                                         </p>
                                     </Link>
@@ -115,9 +148,14 @@ export function Navbar(): React.ReactElement {
                         </div>
 
                         {/* Contact Us button - Hidden on screens smaller than ~1024px */}
-                        <div className="hidden lg:block">
+                        <div
+                            className="hidden lg:block"
+                            data-aos="fade-left"
+                            data-aos-duration="800"
+                            data-aos-delay="600"
+                        >
                             <Button
-                                className="group flex items-center gap-2 !px-4 !py-6  border border-white/20 hover:border-white/40 transition-all duration-300 hover:bg-white/5 cursor-pointer bg-black rounded-full"
+                                className="group flex items-center gap-2 !px-4 !py-6 border border-white/20 hover:border-white/40 transition-all duration-300 hover:bg-white/5 cursor-pointer bg-black rounded-full hover:scale-105 hover:shadow-lg"
                                 onClick={openContactPopup}
                             >
                                 <PhoneCall className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
@@ -126,12 +164,17 @@ export function Navbar(): React.ReactElement {
                         </div>
 
                         {/* Mobile menu button - Shows on screens smaller than ~1024px */}
-                        <div className="lg:hidden flex items-center">
+                        <div
+                            className="lg:hidden flex items-center"
+                            data-aos="fade-left"
+                            data-aos-duration="800"
+                            data-aos-delay="300"
+                        >
                             <Button
                                 variant="ghost"
                                 size="icon"
                                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                                className="text-white hover:bg-white/10 transition-colors duration-200"
+                                className="text-white hover:bg-white/10 transition-colors duration-200 hover:scale-105"
                             >
                                 {isMobileMenuOpen ? <X className="h-7 w-7" /> : <MenuIcon className="h-7 w-7" />}
                             </Button>
@@ -140,7 +183,11 @@ export function Navbar(): React.ReactElement {
 
                     {/* Mobile menu dropdown - Improved styling */}
                     {isMobileMenuOpen && (
-                        <div className="xl:hidden bg-gradient-to-b from-[#000] to-[#171717] shadow-2xl backdrop-blur-sm">
+                        <div
+                            className="xl:hidden bg-gradient-to-b from-[#000] to-[#171717] shadow-2xl backdrop-blur-sm"
+                            data-aos="fade-down"
+                            data-aos-duration="500"
+                        >
                             <div className="container mx-auto px-6 py-6">
                                 <nav className="flex flex-col space-y-2">
                                     {navItems.map((item, index) => (
@@ -149,15 +196,23 @@ export function Navbar(): React.ReactElement {
                                             key={index}
                                             onClick={() => setIsMobileMenuOpen(false)}
                                             className="group"
+                                            data-aos="fade-right"
+                                            data-aos-duration="400"
+                                            data-aos-delay={index * 100}
                                         >
-                                            <div className="cursor-pointer text-white hover:text-[#3BBAB6] px-4 py-3 font-medium rounded-lg hover:bg-white/5 transition-all duration-200 border-l-2 border-transparent hover:border-[#3BBAB6]">
+                                            <div className="cursor-pointer text-white hover:text-[#3BBAB6] px-4 py-3 font-medium rounded-lg hover:bg-white/5 transition-all duration-200 border-l-2 border-transparent hover:border-[#3BBAB6] hover:scale-105">
                                                 {item.name}
                                             </div>
                                         </Link>
                                     ))}
-                                    <div className="pt-4 border-t border-gray-700 mt-4">
+                                    <div
+                                        className="pt-4 border-t border-gray-700 mt-4"
+                                        data-aos="fade-up"
+                                        data-aos-duration="400"
+                                        data-aos-delay="500"
+                                    >
                                         <Button
-                                            className="w-full group flex items-center justify-center gap-3 !px-6 !py-4 rounded-xl bg-gradient-to-r hover:bg-white/5 cursor-pointer bg-black  transition-all duration-300 text-white font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
+                                            className="w-full group flex items-center justify-center gap-3 !px-6 !py-4 rounded-xl bg-gradient-to-r hover:bg-white/5 cursor-pointer bg-black transition-all duration-300 text-white font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
                                             onClick={openContactPopup}
                                         >
                                             <PhoneCall className="w-5 h-5" />

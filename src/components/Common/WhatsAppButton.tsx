@@ -3,15 +3,15 @@
 import Image from 'next/image';
 
 const WhatsAppButton = () => {
-    const phoneNumber = '03254881328';
-    const whatsappUrl = `https://wa.me/${phoneNumber}`;
+    // const phoneNumber = '03254881328';
+    const whatsappUrl = `https://wa.me/923254881328`;
 
     const handleClick = () => {
         window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     };
 
     return (
-        <div className="fixed bottom-4 right-4 z-[999] sm:bottom-6 sm:right-6">
+        <div className="fixed bottom-4 right-4 z-[9999] sm:bottom-6 sm:right-6">
             <button
                 onClick={handleClick}
                 className="bg-green-500 hover:bg-green-600 text-white rounded-full p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-110 active:scale-95 cursor-pointer"
