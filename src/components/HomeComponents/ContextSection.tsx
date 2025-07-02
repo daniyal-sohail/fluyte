@@ -68,7 +68,7 @@ export function ContextSection() {
                                         muted
                                         playsInline
                                     >
-                                        <source src="/img/reel.mp4" type="video/mp4" />
+                                        <source src="https://res.cloudinary.com/dkke0ibzk/video/upload/v1751451738/reel_t58iph.mp4" type="video/mp4" />
                                         Your browser does not support the video tag.
                                     </video>
 
