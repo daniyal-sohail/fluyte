@@ -6,6 +6,7 @@ import { PersonStructuredData, WebsiteStructuredData, ServiceStructuredData } fr
 import GoogleAnalytics from "@/components/Common/GoogleAnalytics";
 import GoogleTagManager from "@/components/Common/GoogleTagManager";
 import AOSInitializer from "@/components/Common/AOSInitializer";
+import WhatsAppButton from "@/components/Common/WhatsAppButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -154,6 +155,10 @@ export default function RootLayout({
 
         {/* Your content */}
         {children}
+
+        {/* WhatsApp Floating Button */}
+        <WhatsAppButton />
+
         <SpeedInsights />
       </body>
     </html >

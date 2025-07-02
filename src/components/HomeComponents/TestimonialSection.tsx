@@ -12,15 +12,13 @@ const testimonialItems = [
                 <div className="bg-[#48D1CC] rounded-full p-2 w-fit mb-4">
                     <RiDoubleQuotesR className="w-5 h-5 text-white" />
                 </div>
-
                 <p className="text-gray-200 text-xl mb-6 flex-grow">
-                    Thanks to your team, I sourced digital products in my niche and
-                    started my online store.
+                    Daniyal's work on the Settle Homes website was exceptional. His attention to detail greatly improved our client experience. Highly recommended!
                 </p>
                 <div className="flex items-center mt-auto">
                     <div>
-                        <p className="font-medium text-white">Jacob L.</p>
-                        <p className="text-gray-400 text-xs">UNITED STATES</p>
+                        <p className="font-medium text-white">Serena Huage</p>
+                        <p className="text-gray-400 text-xs">CEO OF SETTLE HOMES</p>
                     </div>
                 </div>
             </div>
@@ -33,14 +31,12 @@ const testimonialItems = [
                     <RiDoubleQuotesR className="w-5 h-5 text-white" />
                 </div>
                 <p className="text-gray-200 text-xl mb-6 flex-grow">
-                    This gave me the opportunity to quickly create digital products and
-                    lead magnets for my community. An absolute game-changer for my own business community.
+                    Daniyal created an amazing Desert Safari Booking website. His creativity and technical skills made it engaging and responsive. I'm very pleased!
                 </p>
                 <div className="flex items-center mt-auto">
-
                     <div>
-                        <p className="font-medium text-white">Michael K.</p>
-                        <p className="text-gray-400 text-xs">UNITED STATES</p>
+                        <p className="font-medium text-white">Fahad</p>
+                        <p className="text-gray-400 text-xs">CEO OF ARABIAN SAFARI</p>
                     </div>
                 </div>
             </div>
@@ -53,14 +49,12 @@ const testimonialItems = [
                     <RiDoubleQuotesR className="w-5 h-5 text-white" />
                 </div>
                 <p className="text-gray-200 text-xl mb-6 flex-grow">
-                    The flexibility of the library is insane; can&apos;t wait to use this in my
-                    funnel. Excited to get all visuals, including the graphics and mockups!
+                    Daniyal did an excellent job on our clinic website. He made it user-friendly and visually appealing, enhancing our patient interactions.
                 </p>
                 <div className="flex items-center mt-auto">
-
                     <div>
-                        <p className="font-medium text-white">Frederik J.</p>
-                        <p className="text-gray-400 text-xs">DENMARK</p>
+                        <p className="font-medium text-white">Dr. Abid Mustaq</p>
+                        <p className="text-gray-400 text-xs">CEO OF MUSHTAQ HEALTH CLINIC</p>
                     </div>
                 </div>
             </div>
@@ -73,34 +67,12 @@ const testimonialItems = [
                     <RiDoubleQuotesR className="w-5 h-5 text-white" />
                 </div>
                 <p className="text-gray-200 text-xl mb-6 flex-grow">
-                    If I had known, it would have been so complete! Quality of this
-                    content is immersive. I will definitely take another product for my secondary niche.
+                    Daniyal's work on our website was impressive. He delivered a modern site that perfectly showcases our services. Great job!
                 </p>
                 <div className="flex items-center mt-auto">
-
                     <div>
-                        <p className="font-medium text-white">Edwin P.</p>
-                        <p className="text-gray-400 text-xs">SINGAPORE</p>
-                    </div>
-                </div>
-            </div>
-        ),
-    },
-    {
-        content: (
-            <div className="bg-[#1A1A1A] border border-gray-800 rounded-3xl p-10 w-[400px] h-[350px] flex flex-col">
-                <div className="bg-[#48D1CC] rounded-full p-2 w-fit mb-4">
-                    <RiDoubleQuotesR className="w-5 h-5 text-white" />
-                </div>
-                <p className="text-gray-200 text-xl mb-6 flex-grow">
-                    These resources are professionally made and easy to customize for my
-                    specific audience needs.
-                </p>
-                <div className="flex items-center mt-auto">
-
-                    <div>
-                        <p className="font-medium text-white">Elena R.</p>
-                        <p className="text-gray-400 text-xs">ITALY</p>
+                        <p className="font-medium text-white">Mansoor Iqbal</p>
+                        <p className="text-gray-400 text-xs">CEO OF CONSTRUCTION AND CONSULTANCY</p>
                     </div>
                 </div>
             </div>
