@@ -13,7 +13,7 @@ const testimonialItems = [
                     <RiDoubleQuotesR className="w-5 h-5 text-white" />
                 </div>
                 <p className="text-gray-200 text-xl mb-6 flex-grow">
-                    Daniyal's work on the Settle Homes website was exceptional. His attention to detail greatly improved our client experience. Highly recommended!
+                    Daniyal&apos;s work on the Settle Homes website was exceptional. His attention to detail greatly improved our client experience. Highly recommended!
                 </p>
                 <div className="flex items-center mt-auto">
                     <div>
@@ -31,7 +31,7 @@ const testimonialItems = [
                     <RiDoubleQuotesR className="w-5 h-5 text-white" />
                 </div>
                 <p className="text-gray-200 text-xl mb-6 flex-grow">
-                    Daniyal created an amazing Desert Safari Booking website. His creativity and technical skills made it engaging and responsive. I'm very pleased!
+                    Daniyal created an amazing Desert Safari Booking website. His creativity and technical skills made it engaging and responsive. I&apos;m very pleased!
                 </p>
                 <div className="flex items-center mt-auto">
                     <div>
@@ -67,7 +67,7 @@ const testimonialItems = [
                     <RiDoubleQuotesR className="w-5 h-5 text-white" />
                 </div>
                 <p className="text-gray-200 text-xl mb-6 flex-grow">
-                    Daniyal's work on our website was impressive. He delivered a modern site that perfectly showcases our services. Great job!
+                    Daniyal&apos;s work on our website was impressive. He delivered a modern site that perfectly showcases our services. Great job!
                 </p>
                 <div className="flex items-center mt-auto">
                     <div>
