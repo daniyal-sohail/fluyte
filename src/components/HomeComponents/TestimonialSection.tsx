@@ -12,15 +12,12 @@ const testimonialItems = [
                 <div className="bg-[#48D1CC] rounded-full p-2 w-fit mb-4">
                     <RiDoubleQuotesR className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-white font-bold text-2xl mb-3">
-                    You inspired me to start my own digital products business.
-                </h3>
-                <p className="text-gray-400 text-xl mb-6 flex-grow">
+
+                <p className="text-gray-200 text-xl mb-6 flex-grow">
                     Thanks to your team, I sourced digital products in my niche and
                     started my online store.
                 </p>
                 <div className="flex items-center mt-auto">
-
                     <div>
                         <p className="font-medium text-white">Jacob L.</p>
                         <p className="text-gray-400 text-xs">UNITED STATES</p>
@@ -35,12 +32,9 @@ const testimonialItems = [
                 <div className="bg-[#48D1CC] rounded-full p-2 w-fit mb-4">
                     <RiDoubleQuotesR className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-white font-bold text-2xl mb-3">
-                    An absolute game-changer for my own business community.
-                </h3>
-                <p className="text-gray-400 text-sm mb-6 flex-grow">
+                <p className="text-gray-200 text-xl mb-6 flex-grow">
                     This gave me the opportunity to quickly create digital products and
-                    lead magnets for my community.
+                    lead magnets for my community. An absolute game-changer for my own business community.
                 </p>
                 <div className="flex items-center mt-auto">
 
@@ -58,12 +52,9 @@ const testimonialItems = [
                 <div className="bg-[#48D1CC] rounded-full p-2 w-fit mb-4">
                     <RiDoubleQuotesR className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-white font-bold text-2xl mb-3">
-                    Excited to get all visuals, including the graphics and mockups!
-                </h3>
-                <p className="text-gray-400 text-sm mb-6 flex-grow">
+                <p className="text-gray-200 text-xl mb-6 flex-grow">
                     The flexibility of the library is insane; can&apos;t wait to use this in my
-                    funnel.
+                    funnel. Excited to get all visuals, including the graphics and mockups!
                 </p>
                 <div className="flex items-center mt-auto">
 
@@ -81,12 +72,9 @@ const testimonialItems = [
                 <div className="bg-[#48D1CC] rounded-full p-2 w-fit mb-4">
                     <RiDoubleQuotesR className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-white font-bold text-2xl mb-3">
-                    I will definitely take another product for my secondary niche.
-                </h3>
-                <p className="text-gray-400 text-sm mb-6 flex-grow">
+                <p className="text-gray-200 text-xl mb-6 flex-grow">
                     If I had known, it would have been so complete! Quality of this
-                    content is immersive.
+                    content is immersive. I will definitely take another product for my secondary niche.
                 </p>
                 <div className="flex items-center mt-auto">
 
@@ -104,10 +92,7 @@ const testimonialItems = [
                 <div className="bg-[#48D1CC] rounded-full p-2 w-fit mb-4">
                     <RiDoubleQuotesR className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-white font-bold text-2xl mb-3">
-                    The templates saved me weeks of design and content work.
-                </h3>
-                <p className="text-gray-400 text-sm mb-6 flex-grow">
+                <p className="text-gray-200 text-xl mb-6 flex-grow">
                     These resources are professionally made and easy to customize for my
                     specific audience needs.
                 </p>

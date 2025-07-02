@@ -6,29 +6,33 @@ export function TechFundamentals() {
     // Sample video data - replace with your actual video sources
     const videos = [
         {
-            src: "https://www.instagram.com/reel/DIEfxJVNYVx/?utm_source=ig_web_copy_link",
-            title: "Full Stack Roadmap"
-        },
-        {
-            src: "/img/reel.mp4",
+            src: "https://res.cloudinary.com/dkke0ibzk/video/upload/v1751429257/web-dev_myjdtu.mp4",
             title: "Frontend vs Backend"
         },
         {
-            src: "/img/reel.mp4",
+            src: "https://res.cloudinary.com/dkke0ibzk/video/upload/v1751429253/fronted_df3fj0.mp4",
+            title: "Frontend Roadmap"
+        },
+        {
+            src: "https://res.cloudinary.com/dkke0ibzk/video/upload/v1751437973/backend_eomkhy.mp4",
+            title: "Backend Roadmap"
+        },
+        {
+            src: "https://res.cloudinary.com/dkke0ibzk/video/upload/v1751451738/reel_t58iph.mp4",
             title: "Authentication vs Authorization"
         },
         {
-            src: "/img/reel.mp4",
+            src: "https://res.cloudinary.com/dkke0ibzk/video/upload/v1751437964/internet_jsd5nf.mp4",
             title: "How Internet Works"
         },
         {
-            src: "/img/reel.mp4",
-            title: "Dark Web Explained"
+            src: "https://res.cloudinary.com/dkke0ibzk/video/upload/v1751437962/http_fgtjfk.mp4",
+            title: "HTTP vs HTTPS"
         },
         {
-            src: "/img/reel.mp4",
-            title: "Web Security Basics"
-        }
+            src: "https://res.cloudinary.com/dkke0ibzk/video/upload/v1751429251/deepseek_xslplt.mp4",
+            title: "DeepSeek"
+        },
     ];
 
     return (

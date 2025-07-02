@@ -6,13 +6,13 @@ import { cn } from "@/lib/utils";
 
 export function ContentHero() {
     return (
-        <div className="flex flex-col overflow-hidden bg-grid-white/[0.08] mt-32 sm:mt-20 md:mt-48 lg:mt-8">
+        <div className="flex flex-col overflow-hidden bg-grid-white/[0.07] mt-32 sm:mt-20 md:mt-48 lg:mt-8">
             <div
                 className={cn(
                     "absolute inset-0 w-full h-full top-0",
                     "bg-[size:80px_80px]",
                     "bg-[linear-gradient(to_right,rgba(255,255,255,0.25)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.25)_1px,transparent_1px)]",
-                    "opacity-25 z-0"
+                    "opacity-30 z-0"
                 )}
             />
 

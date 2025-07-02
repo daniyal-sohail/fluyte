@@ -20,7 +20,7 @@ export default function HeroSection(): React.ReactElement {
                     "absolute inset-0 w-full h-full top-0",
                     "bg-[size:80px_80px]",
                     "bg-[linear-gradient(to_right,rgba(255,255,255,0.25)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.25)_1px,transparent_1px)]",
-                    "opacity-25 z-0"
+                    "opacity-30 z-0"
                 )}
             />
             {/* Main content with proper z-index */}

@@ -6,28 +6,28 @@ export function ReactComponent() {
     // Sample video data - replace with your actual video sources
     const videos = [
         {
-            src: "/img/reel.mp4",
-            title: "Full Stack Roadmap"
+            src: "https://res.cloudinary.com/dkke0ibzk/video/upload/v1751429262/use-state_ga5ftr.mp4",
+            title: "Vite vs CRA"
         },
         {
-            src: "/img/reel.mp4",
-            title: "Frontend vs Backend"
+            src: "https://res.cloudinary.com/dkke0ibzk/video/upload/v1751429264/jsx_mfgki4.mp4",
+            title: "JSX in React"
         },
         {
-            src: "/img/reel.mp4",
-            title: "Authentication vs Authorization"
+            src: "https://res.cloudinary.com/dkke0ibzk/video/upload/v1751429264/virtual-dom_kyxway.mp4",
+            title: "Virtual Dom"
         },
         {
-            src: "/img/reel.mp4",
-            title: "How Internet Works"
+            src: "https://res.cloudinary.com/dkke0ibzk/video/upload/v1751429252/use-effect_rmy28c.mp4",
+            title: "Use Effect Hook"
         },
         {
-            src: "/img/reel.mp4",
-            title: "Dark Web Explained"
+            src: "https://res.cloudinary.com/dkke0ibzk/video/upload/v1751429250/use-memo_bsrbhm.mp4",
+            title: "Use Memo Hook"
         },
         {
-            src: "/img/reel.mp4",
-            title: "Web Security Basics"
+            src: "https://res.cloudinary.com/dkke0ibzk/video/upload/v1751429247/react-router_ciw1vz.mp4",
+            title: "React Router Dom"
         }
     ];
 

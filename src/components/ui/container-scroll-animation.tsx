@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { ReactNode, useRef, useState } from "react";
 import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
 import Image from "next/image";
 
@@ -109,20 +109,26 @@ export const PhoneFrame = ({
         }
     };
 
-    const SinglePhone = ({ videoRef, muted, toggleMute }: {
+    const SinglePhone = ({ videoRef, muted, toggleMute, src, videoSrc }: {
         videoRef: React.RefObject<HTMLVideoElement | null>,
         muted: boolean,
-        toggleMute: () => void
+        toggleMute: () => void,
+        src: ReactNode | string,
+        videoSrc: string
     }) => (
         <div className="relative max-w-[350px] mx-auto">
             <div className="relative">
-                <Image
-                    src="/img/frame.png"
-                    alt="Mobile frame"
-                    width={400}
-                    height={250}
-                    className="w-full h-auto"
-                />
+                {typeof src === 'string' ? (
+                    <Image
+                        src={src}
+                        alt="Mobile frame"
+                        width={400}
+                        height={250}
+                        className="w-full h-auto"
+                    />
+                ) : (
+                    src
+                )}
                 <div className="absolute inset-0 flex items-center justify-center">
                     <div style={{
                         position: 'absolute',
@@ -141,7 +147,7 @@ export const PhoneFrame = ({
                             muted
                             playsInline
                         >
-                            <source src="/img/reel.mp4" type="video/mp4" />
+                            <source src={videoSrc} type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                         <button
@@ -185,6 +191,8 @@ export const PhoneFrame = ({
                         videoRef={videoRef1}
                         muted={muted1}
                         toggleMute={toggleMute1}
+                        src="/img/frame.png"
+                        videoSrc="https://res.cloudinary.com/dkke0ibzk/video/upload/v1751451738/reel_t58iph.mp4"
                     />
                 ) : (
                     // Two phones side by side on desktop
@@ -193,11 +201,15 @@ export const PhoneFrame = ({
                             videoRef={videoRef1}
                             muted={muted1}
                             toggleMute={toggleMute1}
+                            src="/img/frame.png"
+                            videoSrc="https://res.cloudinary.com/dkke0ibzk/video/upload/v1751451738/reel_t58iph.mp4"
                         />
                         <SinglePhone
                             videoRef={videoRef2}
                             muted={muted2}
                             toggleMute={toggleMute2}
+                            src="/img/frame.png"
+                            videoSrc="https://res.cloudinary.com/dkke0ibzk/video/upload/v1751429264/react-folder_gyforp.mp4"
                         />
                     </div>
                 )}
