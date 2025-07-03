@@ -117,7 +117,7 @@ const AboutHero = ({
                                             key={index}
                                             data-aos="flip-up"
                                             data-aos-duration="600"
-                                            data-aos-delay={600 + (index * 100)}
+                                            data-aos-delay="300"
                                             className="group relative p-3 sm:p-4 lg:p-6 rounded-xl sm:rounded-2xl border cursor-pointer transition-all duration-300 hover:shadow-lg"
                                             style={{
                                                 background: 'linear-gradient(180deg, #242424, #121212 65.62%)',
@@ -149,7 +149,7 @@ const AboutHero = ({
                             <div
                                 data-aos="slide-up"
                                 data-aos-duration="700"
-                                data-aos-delay="300"
+                                data-aos-delay="200"
                                 className="space-y-3 sm:space-y-4"
                             >
                                 <p className="text-xs sm:text-sm uppercase tracking-wider font-semibold" style={{ color: '#adadad' }}>Tech Stack</p>
@@ -161,7 +161,7 @@ const AboutHero = ({
                                                 key={index}
                                                 data-aos="zoom-in"
                                                 data-aos-duration="500"
-                                                data-aos-delay={1100 + (index * 50)}
+                                                data-aos-delay="250"
                                                 className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl text-white text-xs sm:text-sm font-medium border transition-all duration-300 hover:shadow-lg"
                                                 style={{
                                                     background: 'linear-gradient(180deg, #242424, #121212 65.62%)',
@@ -181,7 +181,7 @@ const AboutHero = ({
                             <div
                                 data-aos="fade-in"
                                 data-aos-duration="600"
-                                data-aos-delay="330"
+                                data-aos-delay="230"
                                 className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-6 text-sm sm:text-base"
                                 style={{ color: '#adadad' }}
                             >
@@ -199,7 +199,7 @@ const AboutHero = ({
                             <div
                                 data-aos="slide-right"
                                 data-aos-duration="700"
-                                data-aos-delay="350"
+                                data-aos-delay="200"
                                 className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 sm:gap-3 lg:gap-4"
                             >
                                 {[
@@ -215,7 +215,7 @@ const AboutHero = ({
                                             key={index}
                                             data-aos="flip-left"
                                             data-aos-duration="600"
-                                            data-aos-delay={1600 + (index * 100)}
+                                            data-aos-delay="300"
                                             href={social.href}
                                             target="_blank"
                                             className="flex items-center justify-center sm:justify-start space-x-2 px-3 py-2 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl border transition-all duration-300 hover:shadow-lg text-center sm:text-left"
@@ -240,7 +240,7 @@ const AboutHero = ({
                     <div
                         data-aos="fade-left"
                         data-aos-duration="1000"
-                        data-aos-delay="300"
+                        data-aos-delay="200"
                         className="lg:col-span-2 order-1 lg:order-2"
                     >
                         {/* Enhanced Profile Image Card */}
@@ -291,7 +291,7 @@ const AboutHero = ({
                                 <div
                                     data-aos="fade-up"
                                     data-aos-duration="600"
-                                    data-aos-delay="800"
+                                    data-aos-delay="300"
                                     className="mt-4 sm:mt-6 text-center"
                                 >
                                     <h3 className="text-lg sm:text-xl font-bold text-white mb-1 truncate">{name}</h3>

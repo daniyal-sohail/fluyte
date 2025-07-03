@@ -23,7 +23,7 @@ function ExpBox({ img, title, role, duration, index }: ExpBoxProps) {
                     <div
                         data-aos="zoom-in"
                         data-aos-duration="500"
-                        data-aos-delay={500 + (index * 100)}
+                        data-aos-delay="200"
                         className="relative flex-shrink-0"
                     >
                         <Image
@@ -39,7 +39,7 @@ function ExpBox({ img, title, role, duration, index }: ExpBoxProps) {
                     <div
                         data-aos="fade-in"
                         data-aos-duration="500"
-                        data-aos-delay={500 + (index * 100)}
+                        data-aos-delay="220"
                         className="ml-3 xs:ml-4 sm:ml-6 flex-1 min-w-0"
                     >
                         <h1 className="text-base xs:text-lg sm:text-xl font-semibold leading-tight text-gray-600 group-hover:text-gray-700 transition-colors duration-200 mb-0.5 sm:mb-1 truncate">
@@ -55,7 +55,7 @@ function ExpBox({ img, title, role, duration, index }: ExpBoxProps) {
                 <div
                     data-aos="flip-left"
                     data-aos-duration="500"
-                    data-aos-delay={600 + (index * 100)}
+                    data-aos-delay="250"
                     className="flex-shrink-0"
                 >
                     <div className="inline-flex items-center px-2 py-1 xs:px-3 xs:py-1.5 rounded-full text-xs font-medium bg-teal-500/10 text-teal-400 border border-teal-500/20 whitespace-nowrap">

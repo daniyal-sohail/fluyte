@@ -64,32 +64,19 @@ export function AllServices() {
                 className="absolute inset-0 "
             />
 
-            <div className="container mx-auto px-4 md:px-8 lg:px-16 relative z-10">
-                {/* Header Section */}
-                <div
-                    data-aos="slide-up"
-                    data-aos-duration="700"
-                    data-aos-delay="300"
-                    className="text-center mb-16"
-                >
-                    <div
-                        data-aos="fade-down"
-                        data-aos-duration="600"
-                        data-aos-delay="400"
-                        className="inline-block mb-6"
-                    >
-                        <SectionButton btnText="Quality Services" />
-                    </div>
-
+            <div className="container mx-auto px-4 md:px-8 lg:px-16 py-6">
+                {/* Heading */}
+                <div className="flex flex-col items-center text-center">
+                    <SectionButton btnText="Quality Services" />
+                    {/* Large Heading */}
                     <h1
-                        data-aos="fade-in"
-                        data-aos-duration="800"
-                        data-aos-delay="500"
-                        className="mb-8 mt-2 text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold max-w-lg sm:max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-5xl"
+                        data-aos="fade-up"
+                        className="mb-8 mt-2 text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl"
                     >
                         Discover <span style={{ color: "#48D1CC" }}>high quality services that</span> deliver real results
 
                     </h1>
+
 
                 </div>
 

@@ -25,8 +25,8 @@ const NotificationPopup: React.FC<NotificationPopupProps> = ({ isOpen, type, tit
     useEffect(() => {
         if (isOpen && popupRef.current) {
             gsap.fromTo(popupRef.current,
-                { opacity: 0, scale: 0.9, y: -20 },
-                { opacity: 1, scale: 1, y: 0, duration: 0.3, ease: "back.out(1.7)" }
+                { opacity: 0, scale: 0.9 },
+                { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }
             );
         }
     }, [isOpen]);
@@ -38,20 +38,20 @@ const NotificationPopup: React.FC<NotificationPopupProps> = ({ isOpen, type, tit
     const borderColor = type === 'success' ? 'border-green-500/20' : 'border-red-500/20';
 
     return (
-        <div className="fixed top-4 right-4 z-[9999] max-w-sm">
+        <div className="fixed inset-0 bg-black bg-opacity-70 z-[9999] flex items-center justify-center p-4">
             <div
                 ref={popupRef}
-                className={`bg-[#121212] text-white rounded-xl p-4 shadow-2xl border ${borderColor}`}
+                className={`bg-[#121212] text-white rounded-xl w-full max-w-md p-6 shadow-2xl border ${borderColor}`}
                 style={{ opacity: 0, transform: 'scale(0.9)' }}
             >
-                <div className="flex items-center mb-2">
-                    <Icon className={`h-5 w-5 ${iconColor} mr-2`} />
-                    <h3 className="text-lg font-bold">{title}</h3>
+                <div className="flex items-center mb-4">
+                    <Icon className={`h-6 w-6 ${iconColor} mr-3`} />
+                    <h3 className="text-xl font-bold">{title}</h3>
                 </div>
-                <p className="text-gray-300 mb-4 text-sm">{message}</p>
+                <p className="text-gray-300 mb-6">{message}</p>
                 <button
                     onClick={onClose}
-                    className="w-full bg-teal-500 hover:bg-teal-600 text-white font-medium py-2 px-3 rounded-lg transition-colors duration-300 text-sm"
+                    className="w-full bg-teal-500 hover:bg-teal-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300"
                 >
                     Got it
                 </button>
@@ -63,32 +63,32 @@ const NotificationPopup: React.FC<NotificationPopupProps> = ({ isOpen, type, tit
 // Service configurations with dynamic content
 const serviceConfigs = {
     "Full-Stack Web Development": {
-        title: "Request Full-Stack Development",
+        title: "Request For Full-Stack Web Development Service",
         description: "Get a powerful, scalable web application built with modern technologies"
     },
     "Frontend Development": {
-        title: "Request Frontend Development",
-        description: "Create stunning, responsive user interfaces"
+        title: "Request For Frontend Development Service",
+        description: "Create stunning, responsive user interfaces that engage your users"
     },
     "Backend Development": {
-        title: "Request Backend Development",
-        description: "Build robust server-side solutions with secure APIs"
+        title: "Request For Backend Development Service",
+        description: "Build robust server-side solutions with secure APIs and databases"
     },
     "UI/UX Design": {
-        title: "Request UI/UX Design",
-        description: "Design exceptional user experiences"
+        title: "Request For UI/UX Design Service",
+        description: "Design exceptional user experiences that delight your customers"
     },
     "Graphic Design": {
-        title: "Request Graphic Design",
-        description: "Professional visual identity and branding"
+        title: "Request For Graphic Design Service",
+        description: "Professional visual identity and branding that makes you stand out"
     },
     "WordPress & Shopify Development": {
-        title: "Request WordPress/Shopify Development",
-        description: "Custom websites and online stores"
+        title: "Request For WordPress/Shopify Development",
+        description: "Custom websites and online stores optimized for your business"
     },
     "Website Maintenance & Optimization": {
-        title: "Request Website Maintenance",
-        description: "Keep your website running smoothly"
+        title: "Request For Website Maintenance",
+        description: "Keep your website running smoothly with professional maintenance"
     }
 };
 
@@ -107,27 +107,40 @@ const ServicePopup: React.FC<ServicePopupProps> = ({ onClose, serviceTitle }) =>
         message: string;
     }>({ isOpen: false, type: 'success', title: '', message: '' });
 
-    const popupRef = useRef<HTMLDivElement | null>(null);
+    // Refs for animations
+    const popupOverlayRef = useRef<HTMLDivElement | null>(null);
+    const popupContentRef = useRef<HTMLDivElement | null>(null);
+    const formRef = useRef<HTMLDivElement | null>(null);
 
     // Get service configuration
     const config = serviceConfigs[serviceTitle as keyof typeof serviceConfigs] || {
         title: `Request ${serviceTitle}`,
-        description: "Let's discuss your project"
+        description: "Let's discuss your project and bring your ideas to life"
     };
 
     const closePopup = (): void => {
-        if (popupRef.current) {
-            gsap.to(popupRef.current, {
-                opacity: 0,
+        const tl = gsap.timeline({
+            onComplete: () => {
+                setIsOpen(false);
+                onClose();
+            }
+        });
+
+        if (popupContentRef.current) {
+            tl.to(popupContentRef.current, {
                 scale: 0.9,
-                y: -20,
+                opacity: 0,
                 duration: 0.3,
-                ease: "power2.out",
-                onComplete: () => {
-                    setIsOpen(false);
-                    onClose();
-                }
+                ease: "power2.out"
             });
+        }
+
+        if (popupOverlayRef.current) {
+            tl.to(popupOverlayRef.current, {
+                opacity: 0,
+                duration: 0.3,
+                ease: "power2.out"
+            }, "-=0.2");
         }
     };
 
@@ -165,7 +178,7 @@ const ServicePopup: React.FC<ServicePopupProps> = ({ onClose, serviceTitle }) =>
 
         // Description length validation
         if (formData.description.length < 10) {
-            showNotification('error', 'Description Too Short', 'Please provide more details (at least 10 characters)');
+            showNotification('error', 'Description Too Short', 'Please provide more details about your project (at least 10 characters)');
             return;
         }
 
@@ -184,144 +197,155 @@ const ServicePopup: React.FC<ServicePopupProps> = ({ onClose, serviceTitle }) =>
             if (response.success) {
                 showNotification(
                     'success',
-                    'Request Submitted!',
-                    `Thanks! I'll send you a proposal within 24-48 hours.`
+                    'Service Request Submitted!',
+                    `Thank you for your ${serviceTitle} request! I'll review your requirements and send you a detailed proposal within 24-48 hours.`
                 );
+
+                // Reset form
                 setFormData({ name: '', email: '', description: '' });
             } else {
                 showNotification('error', 'Submission Failed', response.message || 'Please try again.');
             }
         } catch (error: unknown) {
             console.error('Service form submission error:', error);
-            const errorMessage = (error as { message?: string })?.message || 'An unexpected error occurred.';
+            const errorMessage = (error as { message?: string })?.message || 'An unexpected error occurred. Please try again.';
             showNotification('error', 'Submission Failed', errorMessage);
         } finally {
             setIsSubmitting(false);
         }
     };
 
-    // Disable body scroll when popup is open
+    // Animation when popup opens
     useEffect(() => {
-        if (isOpen) {
-            // Disable scroll
-            document.body.style.overflow = 'hidden';
+        if (isOpen && popupOverlayRef.current && popupContentRef.current && formRef.current) {
+            const tl = gsap.timeline();
 
-            // Animation
-            if (popupRef.current) {
-                gsap.fromTo(popupRef.current,
-                    { opacity: 0, scale: 0.9, y: 20 },
-                    { opacity: 1, scale: 1, y: 0, duration: 0.4, ease: "back.out(1.7)" }
-                );
-            }
+            // Animate overlay
+            tl.fromTo(popupOverlayRef.current,
+                { opacity: 0 },
+                { opacity: 1, duration: 0.3, ease: "power2.out" }
+            );
+
+            // Animate content
+            tl.fromTo(popupContentRef.current,
+                { scale: 0.9, opacity: 0 },
+                { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.7)" },
+                "-=0.1"
+            );
+
+            // Animate form
+            tl.fromTo(formRef.current,
+                { opacity: 0, y: 20 },
+                { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" },
+                "-=0.2"
+            );
         }
-
-        // Cleanup function to re-enable scroll
-        return () => {
-            document.body.style.overflow = 'unset';
-        };
     }, [isOpen]);
-
-    if (!isOpen) return null;
 
     return (
         <>
-            {/* Compact popup positioned relative to viewport */}
-            <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[999] w-[90vw] max-w-md">
+            {isOpen && (
                 <div
-                    ref={popupRef}
-                    className="bg-[#121212] text-white rounded-xl shadow-2xl border border-gray-800 overflow-hidden"
-                    style={{ opacity: 0, transform: 'scale(0.9)' }}
+                    ref={popupOverlayRef}
+                    className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-[999]"
+                    onClick={closePopup}
+                    style={{ opacity: 0 }}
                 >
-                    {/* Header with close button */}
-                    <div className="flex justify-between items-center p-4 border-b border-gray-800">
-                        <h2 className="text-lg font-bold text-teal-400">{config.title}</h2>
-                        <button
-                            onClick={closePopup}
-                            className="text-gray-400 hover:text-white transition-colors p-1"
-                            disabled={isSubmitting}
-                        >
-                            <X size={20} />
-                        </button>
-                    </div>
-
-                    {/* Form content */}
-                    <div className="p-4">
-                        <p className="text-gray-400 text-sm mb-4">{config.description}</p>
-
-                        <form onSubmit={handleSubmit} className="space-y-3">
-                            <div>
-                                <input
-                                    type="text"
-                                    name="name"
-                                    required
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    disabled={isSubmitting}
-                                    className="w-full px-3 py-2 bg-[#1e1e1e] border border-gray-700 rounded-lg 
-                                               focus:ring-1 focus:ring-teal-500 focus:border-teal-500 
-                                               text-white text-sm placeholder-gray-500 disabled:opacity-50"
-                                    placeholder="Your Name"
-                                />
-                            </div>
-
-                            <div>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    required
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    disabled={isSubmitting}
-                                    className="w-full px-3 py-2 bg-[#1e1e1e] border border-gray-700 rounded-lg 
-                                               focus:ring-1 focus:ring-teal-500 focus:border-teal-500 
-                                               text-white text-sm placeholder-gray-500 disabled:opacity-50"
-                                    placeholder="Email Address"
-                                />
-                            </div>
-
-                            <div>
-                                <textarea
-                                    name="description"
-                                    required
-                                    value={formData.description}
-                                    onChange={handleChange}
-                                    disabled={isSubmitting}
-                                    rows={3}
-                                    className="w-full px-3 py-2 bg-[#1e1e1e] border border-gray-700 rounded-lg 
-                                               focus:ring-1 focus:ring-teal-500 focus:border-teal-500 
-                                               text-white text-sm placeholder-gray-500 resize-none disabled:opacity-50"
-                                    placeholder="Project description..."
-                                />
-                            </div>
-
+                    <div
+                        ref={popupContentRef}
+                        className="bg-[#121212] text-white z-[999] rounded-xl w-full max-w-md overflow-hidden shadow-2xl"
+                        onClick={(e): void => e.stopPropagation()}
+                        style={{ opacity: 0, transform: 'scale(0.9)' }}
+                    >
+                        {/* Close Button */}
+                        <div className="flex justify-end p-4">
                             <button
-                                type="submit"
+                                onClick={closePopup}
+                                className="text-gray-400 hover:text-white transition-colors"
                                 disabled={isSubmitting}
-                                className="w-full bg-teal-500 hover:bg-teal-600 text-white 
-                                           font-medium py-2.5 px-4 rounded-lg 
-                                           transition-colors duration-300 
-                                           disabled:opacity-50 disabled:cursor-not-allowed 
-                                           flex items-center justify-center text-sm"
                             >
-                                {isSubmitting ? (
-                                    <>
-                                        <Loader2 className="animate-spin h-4 w-4 mr-2" />
-                                        Submitting...
-                                    </>
-                                ) : (
-                                    'Submit Request'
-                                )}
+                                <X size={24} />
                             </button>
-                        </form>
+                        </div>
+
+                        {/* Form */}
+                        <div ref={formRef} className="px-6 pb-8" style={{ opacity: 0 }}>
+                            <div className="mb-6">
+                                <h2 className="text-2xl font-bold mb-2">{config.title}</h2>
+                                <p className="text-gray-400 text-sm">{config.description}</p>
+                            </div>
+
+                            <form onSubmit={handleSubmit} className="space-y-4">
+                                <div>
+                                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
+                                        Your Name
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        required
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        disabled={isSubmitting}
+                                        className="w-full px-4 py-2 bg-[#1e1e1e] border border-gray-800 rounded-lg focus:ring-teal-500 focus:border-teal-500 text-white disabled:opacity-50"
+                                        placeholder="John Doe"
+                                    />
+                                </div>
+
+                                <div>
+                                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
+                                        Email Address
+                                    </label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        required
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        disabled={isSubmitting}
+                                        className="w-full px-4 py-2 bg-[#1e1e1e] border border-gray-800 rounded-lg focus:ring-teal-500 focus:border-teal-500 text-white disabled:opacity-50"
+                                        placeholder="john@example.com"
+                                    />
+                                </div>
+
+                                <div>
+                                    <label htmlFor="description" className="block text-sm font-medium text-gray-300 mb-1">
+                                        Project Description
+                                    </label>
+                                    <textarea
+                                        id="description"
+                                        name="description"
+                                        required
+                                        value={formData.description}
+                                        onChange={handleChange}
+                                        disabled={isSubmitting}
+                                        rows={4}
+                                        className="w-full px-4 py-2 bg-[#1e1e1e] border border-gray-800 rounded-lg focus:ring-teal-500 focus:border-teal-500 text-white resize-none disabled:opacity-50"
+                                        placeholder="Tell me about your project requirements..."
+                                    />
+                                </div>
+
+                                <button
+                                    type="submit"
+                                    disabled={isSubmitting}
+                                    className="w-full bg-teal-500 hover:bg-teal-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                                >
+                                    {isSubmitting ? (
+                                        <>
+                                            <Loader2 className="animate-spin h-4 w-4 mr-2" />
+                                            Submitting...
+                                        </>
+                                    ) : (
+                                        'Submit Request'
+                                    )}
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            {/* Light backdrop that doesn't dominate */}
-            <div
-                className="fixed inset-0 bg-black bg-opacity-30 z-[998]"
-                onClick={closePopup}
-            />
+            )}
 
             <NotificationPopup
                 isOpen={notification.isOpen}

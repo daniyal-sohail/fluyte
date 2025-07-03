@@ -28,7 +28,7 @@ function ProjectCard({ title, content, buttons = [], btnOne, btnTwo, btnThree, i
                     <div
                         data-aos="fade-in"
                         data-aos-duration="550"
-                        data-aos-delay="500"
+                        data-aos-delay="300"
                         className="w-full md:w-2/5 space-y-4"
                     >
                         <h1
@@ -43,7 +43,7 @@ function ProjectCard({ title, content, buttons = [], btnOne, btnTwo, btnThree, i
                         <div
                             data-aos="slide-right"
                             data-aos-duration="700"
-                            data-aos-delay="500"
+                            data-aos-delay="300"
                             className="flex flex-wrap gap-2"
                         >
                             {buttonArray.map((button, buttonIndex) => (
@@ -61,7 +61,7 @@ function ProjectCard({ title, content, buttons = [], btnOne, btnTwo, btnThree, i
                         <p
                             data-aos="zoom-in"
                             data-aos-duration="550"
-                            data-aos-delay="500"
+                            data-aos-delay="300"
                             className="text-gray-300 mb-6 text-lg leading-relaxed"
                         >
                             {content}
@@ -75,7 +75,7 @@ function ProjectCard({ title, content, buttons = [], btnOne, btnTwo, btnThree, i
                         <div
                             data-aos="fade-in"
                             data-aos-duration="700"
-                            data-aos-delay="500"
+                            data-aos-delay="300"
                             className="relative overflow-hidden rounded-lg shadow-md">
                             <Image
                                 src={img}
