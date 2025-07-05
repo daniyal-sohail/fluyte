@@ -186,3 +186,12 @@ h6 {
     width: 220px;
   }
 }
+
+/* Custom CSS for popup */
+html.popup-open body>*:not([data-popup]) {
+  display: none !important;
+}
+
+html.popup-open {
+  overflow: hidden !important;
+}

@@ -8,6 +8,7 @@ import GoogleTagManager from "@/components/Common/GoogleTagManager";
 import AOSInitializer from "@/components/Common/AOSInitializer";
 import WhatsAppButton from "@/components/Common/WhatsAppButton";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

@@ -47,7 +47,6 @@ const items = [
     },
 ];
 
-
 export function AllServices() {
     return (
         <section
@@ -74,17 +73,11 @@ export function AllServices() {
                         className="mb-8 mt-2 text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl"
                     >
                         Discover <span style={{ color: "#48D1CC" }}>high quality services that</span> deliver real results
-
                     </h1>
-
-
                 </div>
 
                 {/* Services Grid using your ServiceCard */}
-                <div
-
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8"
-                >
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
                     {items.map((item, index) => (
                         <ServiceCard
                             key={index}
@@ -95,7 +88,6 @@ export function AllServices() {
                         />
                     ))}
                 </div>
-
             </div>
         </section>
     );

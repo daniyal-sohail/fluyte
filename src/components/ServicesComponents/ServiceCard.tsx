@@ -1,9 +1,8 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
-import ServicePopup from "../../components/Common/ServicePopup"; // Import the popup component
 
 interface ServiceCardProps {
     title: string;
@@ -13,14 +12,11 @@ interface ServiceCardProps {
 }
 
 export function ServiceCard({ title, description, img, priority = false }: ServiceCardProps) {
-    const [isPopupOpen, setIsPopupOpen] = useState(false);
-
     const handleGetQuoteClick = () => {
-        setIsPopupOpen(true);
-    };
-
-    const handleClosePopup = () => {
-        setIsPopupOpen(false);
+        // Dispatch custom event to open popup
+        window.dispatchEvent(new CustomEvent('openServicePopup', {
+            detail: { serviceTitle: title }
+        }));
     };
 
     return (
@@ -55,7 +51,7 @@ export function ServiceCard({ title, description, img, priority = false }: Servi
                             translateZ={20}
                             as="button"
                             onClick={handleGetQuoteClick}
-                            className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold cursor-pointer  transition-colors"
+                            className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold cursor-pointer transition-colors"
                         >
                             Get Quote →
                         </CardItem>
@@ -63,14 +59,6 @@ export function ServiceCard({ title, description, img, priority = false }: Servi
 
                 </CardBody>
             </CardContainer>
-
-            {/* Service Popup */}
-            {isPopupOpen && (
-                <ServicePopup
-                    onClose={handleClosePopup}
-                    serviceTitle={title}
-                />
-            )}
         </>
     );
 }
