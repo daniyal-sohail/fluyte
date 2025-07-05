@@ -8,13 +8,14 @@ import { MyWorkFlow } from '../../components/ServicesComponents/MyWorkFlow';
 import { WeCollaborate } from '../../components/Common/WeCollaborate';
 import ServicePopup from '../../components/Common/ServicePopup';
 
-function page() {
+function Page() {
     const [isServicePopupOpen, setIsServicePopupOpen] = useState<boolean>(false);
     const [selectedService, setSelectedService] = useState<string>('');
 
     useEffect(() => {
-        const handleOpenServicePopup = (event: any) => {
-            setSelectedService(event.detail.serviceTitle);
+        const handleOpenServicePopup = (event: Event) => {
+            const customEvent = event as CustomEvent;
+            setSelectedService(customEvent.detail.serviceTitle);
             setIsServicePopupOpen(true);
         };
 
@@ -46,4 +47,4 @@ function page() {
     );
 }
 
-export default page;
+export default Page;

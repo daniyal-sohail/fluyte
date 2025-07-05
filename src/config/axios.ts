@@ -3,8 +3,8 @@ import axios, { AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 
 
 // Create axios instance with default config
 const api: AxiosInstance = axios.create({
-    // baseURL: 'https://portfolio-backend-qmx5.onrender.com',
-    baseURL: 'http://localhost:3001/api',
+    baseURL: 'https://portfolio-backend-qmx5.onrender.com',
+    // baseURL: 'http://localhost:3001/api',
     // baseURL: '/api', // Point to Next.js API routes
     timeout: 30000, // Increased to 30 seconds for contact form submissions
     headers: {

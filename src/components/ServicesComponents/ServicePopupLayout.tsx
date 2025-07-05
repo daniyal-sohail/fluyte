@@ -7,7 +7,8 @@ interface ServicePopupLayoutProps {
     children: React.ReactNode;
 }
 
-// Service configurations with dynamic content
+// Service configurations with dynamic content - currently unused but kept for future use
+/*
 const serviceConfigs = {
     "Full-Stack Web Development": {
         title: "Request For Full-Stack Web Development Service",
@@ -38,6 +39,7 @@ const serviceConfigs = {
         description: "Keep your website running smoothly with professional maintenance"
     }
 };
+*/
 
 export function ServicePopupLayout({ children }: ServicePopupLayoutProps) {
     const [activePopup, setActivePopup] = useState<string | null>(null);
@@ -56,12 +58,13 @@ export function ServicePopupLayout({ children }: ServicePopupLayoutProps) {
     }>({ isOpen: false, type: 'success', title: '', message: '' });
 
     useEffect(() => {
-        const handleOpenPopup = (event: any) => {
-            setActivePopup(event.detail.serviceTitle);
+        const handleOpenPopup = (event: Event) => {
+            const customEvent = event as CustomEvent;
+            setActivePopup(customEvent.detail.serviceTitle);
             setFormData({
                 name: '',
                 email: '',
-                service: event.detail.serviceTitle,
+                service: customEvent.detail.serviceTitle,
                 description: ''
             });
             setNotification({ isOpen: false, type: 'success', title: '', message: '' });
@@ -114,7 +117,7 @@ export function ServicePopupLayout({ children }: ServicePopupLayoutProps) {
                 showNotification(
                     'success',
                     'Service Request Sent!',
-                    'Thank you for your service inquiry! I\'ll send you a detailed proposal within 24-48 hours.'
+                    'Thank you for your service inquiry! I&apos;ll send you a detailed proposal within 24-48 hours.'
                 );
             } else {
                 showNotification('error', 'Submission Failed', response.message || 'Please try again.');
@@ -145,7 +148,7 @@ export function ServicePopupLayout({ children }: ServicePopupLayoutProps) {
                         <div className="mt-8">
                             <div className="mb-6">
                                 <h2 className="text-2xl font-bold mb-2">Request {activePopup}</h2>
-                                <p className="text-gray-400 text-sm">Let's discuss your project and bring your ideas to life</p>
+                                <p className="text-gray-400 text-sm">Let&apos;s discuss your project and bring your ideas to life</p>
                             </div>
 
                             <form onSubmit={handleSubmit} className="space-y-4">

@@ -144,7 +144,7 @@ const ServicePopup: React.FC<ServicePopupProps> = ({ onClose, serviceTitle }) =>
                 showNotification(
                     'success',
                     'Service Request Sent!',
-                    'Thank you for your service inquiry! I\'ll send you a detailed proposal within 24-48 hours.'
+                    'Thank you for your service inquiry! I&apos;ll send you a detailed proposal within 24-48 hours.'
                 );
             } else {
                 showNotification('error', 'Submission Failed', response.message || 'Please try again.');
@@ -215,7 +215,7 @@ const ServicePopup: React.FC<ServicePopupProps> = ({ onClose, serviceTitle }) =>
                     <div ref={formRef} className="px-6 pb-8" style={{ opacity: 0 }}>
                         <div className="mb-6">
                             <h2 className="text-2xl font-bold mb-2">Request {serviceTitle}</h2>
-                            <p className="text-gray-400 text-sm">Let's discuss your project and bring your ideas to life</p>
+                            <p className="text-gray-400 text-sm">Let&apos;s discuss your project and bring your ideas to life</p>
                         </div>
 
                         <form onSubmit={handleSubmit} className="space-y-4">
