@@ -110,7 +110,7 @@ export function Navbar(): React.ReactElement {
                             <Link href="/" className="flex items-center space-x-2  rounded-full  hover:scale-105 transition-transform duration-300">
                                 <div className="relative w-18 h-18" style={{ width: '4.5rem', height: '4.5rem' }}>
                                     <Image
-                                        src="/img/logo.png" // Replace with your logo path
+                                        src="/img/log.png" // Replace with your logo path
                                         alt="Logo"
                                         fill
                                         className="object-contain"

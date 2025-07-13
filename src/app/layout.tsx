@@ -123,13 +123,13 @@ export default function RootLayout({
       <head>
         {/* Preload critical resources */}
         <link rel="preload" href="/img/hero.png" as="image" />
-        <link rel="preload" href="/img/logo.png" as="image" />
+        <link rel="preload" href="/img/log.png" as="image" />
 
         {/* Favicon configuration */}
-        <link rel="icon" type="image/png" href="/img/logo.png" sizes="28x28" />
-        <link rel="icon" type="image/png" href="/img/logo.png" sizes="16x16" />
-        <link rel="apple-touch-icon" href="/img/logo.png" />
-        <link rel="shortcut icon" href="/img/logo.png" />
+        <link rel="icon" type="image/png" href="/img/log.png" sizes="28x28" />
+        <link rel="icon" type="image/png" href="/img/log.png" sizes="16x16" />
+        <link rel="apple-touch-icon" href="/img/log.png" />
+        <link rel="shortcut icon" href="/img/log.png" />
 
         {/* DNS prefetch for external domains */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
