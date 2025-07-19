@@ -11,7 +11,7 @@ const WhatsAppButton = () => {
     };
 
     return (
-        <div className="fixed bottom-4 right-4 z-[9999] sm:bottom-6 sm:right-6">
+        <div className="fixed bottom-4 left-4 z-[9999] sm:bottom-6 sm:left-6">
             <button
                 onClick={handleClick}
                 className="text-white rounded-full p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-110 active:scale-95 cursor-pointer"

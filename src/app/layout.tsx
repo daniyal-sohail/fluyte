@@ -7,7 +7,7 @@ import GoogleAnalytics from "@/components/Common/GoogleAnalytics";
 import GoogleTagManager from "@/components/Common/GoogleTagManager";
 import AOSInitializer from "@/components/Common/AOSInitializer";
 import WhatsAppButton from "@/components/Common/WhatsAppButton";
-
+import BotpressScripts from "@/components/Common/BotpressScripts";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -134,10 +134,12 @@ export default function RootLayout({
         {/* DNS prefetch for external domains */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        <link rel="dns-prefetch" href="//cdn.botpress.cloud" />
 
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://cdn.botpress.cloud" />
 
         {/* Structured Data for SEO */}
         <PersonStructuredData />
@@ -151,6 +153,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased scrollbar-hide no-scrollbar force-no-scrollbar`}
       >
         <AOSInitializer />
+
         {/* Google Analytics */}
         <GoogleAnalytics />
 
@@ -160,8 +163,11 @@ export default function RootLayout({
         {/* WhatsApp Floating Button */}
         <WhatsAppButton />
 
+        {/* Botpress Scripts */}
+        <BotpressScripts />
+
         <SpeedInsights />
       </body>
-    </html >
+    </html>
   );
 }
