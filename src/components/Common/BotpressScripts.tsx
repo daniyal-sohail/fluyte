@@ -11,6 +11,7 @@ declare global {
 const BotpressScripts = () => {
     return (
         <>
+
             {/* Botpress Webchat Integration */}
             <Script
                 id="botpress-inject"
