@@ -2,16 +2,25 @@
 
 import Script from 'next/script';
 
+interface BotpressWebChat {
+    init: () => void;
+    open: () => void;
+    close: () => void;
+    toggle: () => void;
+    sendEvent: (event: Record<string, unknown>) => void;
+    sendPayload: (payload: Record<string, unknown>) => void;
+    mergeConfig: (config: Record<string, unknown>) => void;
+}
+
 declare global {
     interface Window {
-        botpressWebChat: any;
+        botpressWebChat: BotpressWebChat;
     }
 }
 
 const BotpressScripts = () => {
     return (
         <>
-
             {/* Botpress Webchat Integration */}
             <Script
                 id="botpress-inject"
