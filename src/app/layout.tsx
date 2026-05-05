@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { Aldrich, Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
-import { PersonStructuredData, WebsiteStructuredData } from "@/components/Common/StructuredData";
-import GoogleAnalytics from "@/components/Common/GoogleAnalytics";
-import GoogleTagManager from "@/components/Common/GoogleTagManager";
-import SmoothScroll from "@/components/Common/SmoothScroll";
-import AOSInitializer from "@/components/Common/AOS";
+import { PersonStructuredData, WebsiteStructuredData } from "@/components/CommonTemp/StructuredData";
+import GoogleAnalytics from "@/components/CommonTemp/GoogleAnalytics";
+import GoogleTagManager from "@/components/CommonTemp/GoogleTagManager";
+import SmoothScroll from "@/components/CommonTemp/SmoothScroll";
+import AOSInitializer from "@/components/CommonTemp/AOS";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
