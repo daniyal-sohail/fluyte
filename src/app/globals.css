@@ -1,36 +1,72 @@
+/* ============================================================
+   DevXcript — Global CSS
+   ============================================================ */
+
 @import "tailwindcss";
 
+/* ── Variables ───────────────────────────────────────────── */
 :root {
-  /* Base colors */
-  --background: #000000;
-  --foreground: #ffffff;
+  --brand: #0F8CA0;
+  --brand-dark: #0d6674;
+  --brand-muted: rgba(15, 140, 160, 0.12);
 
-  /* Heading gradient */
-  --heading-gradient: linear-gradient(180deg, #ffffff, #adadad);
+  --bg: #E5E4E3;
+  --surface: #ECEAE9;
+  --border: rgba(0, 0, 0, 0.08);
 
-  /* Card background */
-  --card-background: linear-gradient(180deg, #242424, #121212 65.62%);
+  --text: #0f0f0f;
+  --text-muted: #6a6a6a;
 
-  /* Theme color - using deep blue as primary theme color */
-  --theme-color: #0E3386;
-
-  /* Accent color - using teal for accents */
-  --accent-color: #3BBAB6;
-  /* --accent-color: #18cb96; */
-
+  --font-display: 'Aldrich', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Dark Theme ──────────────────────────────────────────── */
+[data-theme="dark"],
+.dark {
+  --bg: #0a0a0a;
+  --surface: #141414;
+  --border: rgba(255, 255, 255, 0.07);
+  --text: #f0f0f0;
+  --text-muted: #6a6a6a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0a0a0a;
+    --surface: #141414;
+    --border: rgba(255, 255, 255, 0.07);
+    --text: #f0f0f0;
+    --text-muted: #6a6a6a;
+  }
+}
+
+/* ── Reset ───────────────────────────────────────────────── */
+
+
+/* ── Scrollbar hidden ────────────────────────────────────── */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Base ────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: 'Onest', sans-serif !important;
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 h1,
@@ -39,159 +75,68 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--heading-gradient);
-  font-family: 'Onest', sans-serif !important;
+  font-family: var(--font-display);
 }
 
-.card {
-  background: var(--card-background);
-  border-radius: 0.5rem;
+h1.font-mono,
+h2.font-mono,
+h3.font-mono,
+h4.font-mono,
+h5.font-mono,
+h6.font-mono {
+  font-family: var(--font-display);
 }
 
-.theme-button {
-  background-color: var(--theme-color);
-  color: white;
-  transition: background-color 0.2s ease;
+.home-xenor-typography,
+.home-xenor-typography p,
+/* .home-xenor-typography span, */
+.home-xenor-typography a,
+.home-xenor-typography li,
+.home-xenor-typography button,
+.home-xenor-typography .font-mono {
+  font-family: var(--font-body);
 }
 
-.theme-button:hover {
-  background-color: var(--theme-color);
-  opacity: 0.9;
+.home-xenor-typography span,
+.home-xenor-typography h1,
+.home-xenor-typography h2,
+.home-xenor-typography h3,
+.home-xenor-typography h4,
+.home-xenor-typography h5,
+.home-xenor-typography h6,
+.home-xenor-typography h1.font-mono,
+.home-xenor-typography h2.font-mono,
+.home-xenor-typography h3.font-mono,
+.home-xenor-typography h4.font-mono,
+.home-xenor-typography h5.font-mono,
+.home-xenor-typography h6.font-mono {
+  font-family: var(--font-display);
 }
 
-.accent-element {
-  color: var(--accent-color);
+.section-heading-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-wrap: balance;
 }
 
-
-
-.grid-background {
-  position: relative;
+.span {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-wrap: balance;
 }
 
-.grid-background::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: 80px 80px;
-  background-image: linear-gradient(to right, rgba(75, 85, 99, 0.3) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(75, 85, 99, 0.3) 1px, transparent 1px);
-  opacity: 0.15;
-  z-index: 0;
+.section-heading-badge-text {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.01em;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
+.section-heading-subtitle {
+  font-family: var(--font-body);
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.no-scrollbar {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
-}
-
-/* Alternative method for extremely stubborn scrollbars */
-.force-no-scrollbar {
-  overflow-x: hidden !important;
-  overflow-y: auto !important;
-  overscroll-behavior: none;
-}
-
-
-
-/* for rolling  */
-.gallery-container {
-  position: relative;
-  height: 500px;
-  width: 100%;
-  overflow: hidden;
-}
-
-.gallery-gradient {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 48px;
-  z-index: 10;
-}
-
-.gallery-gradient-left {
-  left: 0;
-  background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, #060606 100%);
-}
-
-.gallery-gradient-right {
-  right: 0;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #060606 100%);
-}
-
-.gallery-content {
-  display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  perspective: 1000px;
-  transform-style: preserve-3d;
-}
-
-.gallery-track {
-  display: flex;
-  height: auto;
-  min-height: 200px;
-  justify-content: center;
-  align-items: center;
-  cursor: grab;
-  transform-style: preserve-3d;
-  width: 100%;
-}
-
-.gallery-item {
-  position: absolute;
-  display: flex;
-  height: fit-content;
-  align-items: center;
-  justify-content: center;
-  padding: 8%;
-  backface-visibility: hidden;
-}
-
-.gallery-img {
-  pointer-events: none;
-  height: 120px;
-  width: 300px;
-  border-radius: 15px;
-  border: 3px solid #fff;
-  object-fit: cover;
-  transition: 0.3s ease;
-}
-
-.gallery-item:hover .gallery-img {
-  transform: scale(1.05);
-  transition: 0.3s ease;
-}
-
-@media (max-width: 768px) {
-  .gallery-item {
-    padding: 6%;
-  }
-
-  .gallery-img {
-    height: 100px;
-    width: 220px;
-  }
-}
-
-/* Custom CSS for popup */
-html.popup-open body>*:not([data-popup]) {
-  display: none !important;
-}
-
-html.popup-open {
-  overflow: hidden !important;
+/* ── Selection ───────────────────────────────────────────── */
+::selection {
+  background: var(--brand-muted);
+  color: var(--brand-dark);
 }

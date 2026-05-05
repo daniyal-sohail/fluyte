@@ -34,9 +34,9 @@ export const PersonStructuredData: React.FC = () => (
     <StructuredData
         type="person"
         data={{
-            name: "Daniyal Sohail",
-            jobTitle: "MERN Stack Developer",
-            description: "MERN Stack Developer & UI/UX Designer specializing in NextJS, Node.js, TypeScript, ReactJS and modern web technologies",
+            name: "Daniyal Sohail ",
+            jobTitle: "SaaS Engineer & Full Stack Developer",
+            description: "Daniyal Sohail is a SaaS Engineer and Full Stack Developer helping founders turn ideas into production ready AI powered products. Building XenorAI — approved by Microsoft for Startups and accepted into Takhleeq Incubator.",
             url: "https://daniyalsohail.me",
             image: "https://daniyalsohail.me/img/hero.png",
             sameAs: [
@@ -47,6 +47,29 @@ export const PersonStructuredData: React.FC = () => (
                 "https://behance.net/daniyalsohail"
             ],
             knowsAbout: [
+                "AI Developer",
+                "Full Stack Developer",
+                "Next.js Developer",
+                "Node.js Developer",
+                "AI SaaS Development",
+                "SaaS MVP Development",
+                "RAG Pipelines",
+                "OpenAI Developer",
+                "XenorAI",
+                "AI Automation",
+                "Freelance AI Developer",
+                "Freelance SaaS Developer",
+                "TypeScript Developer",
+                "React Developer",
+                "Pakistan Developer",
+                "Lahore Developer",
+                "Hire AI Developer",
+                "Hire SaaS Developer",
+                "AI Integration",
+                "LLM Integration",
+                "AI Chatbot Developer",
+                "SaaS Founder",
+                "Microsoft for Startups",
                 "React.js",
                 "Node.js",
                 "NextJS",
@@ -61,15 +84,15 @@ export const PersonStructuredData: React.FC = () => (
                 "MongoDB",
                 "PostgreSQL",
                 "Git",
-                "REST APIs"
+                "REST APIs",
             ],
             worksFor: {
                 "@type": "Organization",
-                "name": "Freelance Developer"
+                "name": "Startups and Founders"
             },
             alumniOf: {
                 "@type": "Organization",
-                "name": "University of Engineering and Technology"
+                "name": "University of Central Punjab"
             },
             hasOccupation: {
                 "@type": "Occupation",
@@ -81,9 +104,9 @@ export const PersonStructuredData: React.FC = () => (
             },
             award: [
                 "2.5+ Years Experience",
-                "10+ Projects Completed",
+                "15+ Projects Completed",
                 "8+ Happy Clients",
-                "MERN Stack Specialist"
+                "Ai Based SaaS Products"
             ]
         }}
     />
@@ -113,33 +136,6 @@ export const WebsiteStructuredData: React.FC = () => (
     />
 );
 
-export const ServiceStructuredData: React.FC = () => (
-    <StructuredData
-        type="service"
-        data={{
-            name: "Full Stack Web Development Services",
-            description: "Professional web development services including React development, Node.js development, and custom web solutions",
-            provider: {
-                "@type": "Person",
-                "name": "Daniyal Sohail"
-            },
-            areaServed: {
-                "@type": "Country",
-                "name": "Worldwide"
-            },
-            serviceType: [
-                "Web Development",
-                "Full Stack Development",
-                "React Development",
-                "Node.js Development",
-                "Custom Web Applications"
-            ],
-            offers: {
-                "@type": "Offer",
-                "availability": "https://schema.org/InStock"
-            }
-        }}
-    />
-);
+
 
 export default StructuredData; 

@@ -17,31 +17,6 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ['@tabler/icons-react', 'lucide-react', 'react-icons'],
   },
 
-  // Enable webpack optimizations
-  webpack: (config, { dev, isServer }) => {
-    // Optimize bundle splitting
-    if (!dev && !isServer) {
-      config.optimization.splitChunks = {
-        chunks: 'all',
-        cacheGroups: {
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'all',
-          },
-          common: {
-            name: 'common',
-            minChunks: 2,
-            chunks: 'all',
-            enforce: true,
-          },
-        },
-      };
-    }
-
-    return config;
-  },
-
   // Enable static optimization
   output: 'standalone',
 
@@ -74,7 +49,22 @@ const nextConfig: NextConfig = {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=()',
           },
-          // SEO and performance headers
+        ],
+      },
+      // CSS and JS files - use shorter cache in dev
+      {
+        source: '/(_next/static/chunks.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=0, must-revalidate',
+          },
+        ],
+      },
+      // Images - long cache
+      {
+        source: '/img/(.*)',
+        headers: [
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
