@@ -47,11 +47,11 @@ export default function Portfolio() {
                             className="font-['Aldrich',sans-serif] text-[#0f0f0f] leading-tight"
                             style={{ fontSize: "clamp(28px, 3.5vw, 44px)" }}
                         >
-                            Things I&apos;ve shipped.
+                            Selected Work.
                         </h2>
                     </div>
                     <p className="font-['Space_Grotesk',sans-serif] text-[12px] text-[#434343] hidden md:block">
-                        Real products, built end-to-end.
+                        Real products, built end to end.
                     </p>
                 </div>
 
