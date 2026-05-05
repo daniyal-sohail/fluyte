@@ -5,7 +5,6 @@ import "./globals.css";
 import { PersonStructuredData, WebsiteStructuredData } from "@/components/common/StructuredData";
 import GoogleAnalytics from "@/components/common/GoogleAnalytics";
 import GoogleTagManager from "@/components/common/GoogleTagManager";
-// import WhatsAppButton from "@/components/common/WhatsAppButton";
 import SmoothScroll from "@/components/common/SmoothScroll";
 import AOSInitializer from "@/components/common/AOS";
 
