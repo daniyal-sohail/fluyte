@@ -3,8 +3,8 @@ import About from "@/components/homeCompoents/About";
 import Hero from "@/components/homeCompoents/Hero";
 import Portfolio from "@/components/homeCompoents/Portfolio";
 import Services from "@/components/homeCompoents/Services";
-import Footer from "@/components/layout/Footer";
-import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/Layout/Footer";
+import Navbar from "@/components/Layout/Navbar";
 import type { Metadata } from "next";
 
 // page.tsx metadata
