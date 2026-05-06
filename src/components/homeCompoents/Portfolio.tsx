@@ -23,7 +23,7 @@ const projects = [
         description:
             "Describe your idea and get a complete end-to-end user flow diagram, tech stack recommendations, and a fully structured plan with modules and sprints  all generated in seconds.",
         image: "/img/ai-mockup.png",
-        live: "#",
+        live: "https://aiproject-planner.vercel.app/",
         accent: false,
     },
 ];
@@ -120,7 +120,7 @@ export default function Portfolio() {
                                         : "border border-black/[0.12] text-[#0f0f0f] hover:border-[#0F8CA0] hover:text-[#0F8CA0]"
                                         }`}
                                 >
-                                    {project.accent ? "Visit Live Site" : "Coming Soon"}
+                                    {project.accent ? "Visit Live Site" : "Try Now"}
                                     <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
                                         <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
