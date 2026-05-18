@@ -62,7 +62,7 @@ const FEATURES = [
         title: "Real-Time Analytics",
         description:
             "Live dashboards showing stock movement, low-stock alerts, and turnover trends — updated the moment anything changes.",
-        size: "normal",
+        size: "large",
         icon: (
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
                 <path d="M4 28l8-8 6 4 8-10 6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -77,7 +77,7 @@ const FEATURES = [
         title: "Printable QR Labels",
         description:
             "Generate professional QR labels for any item. Export print-ready PDFs and scan them back for instant lookups.",
-        size: "normal",
+        size: "large",
         icon: (
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
                 <rect x="4" y="4" width="12" height="12" rx="2" stroke="currentColor" strokeWidth="1.5" />
@@ -95,7 +95,7 @@ const FEATURES = [
         title: "Team & Permissions",
         description:
             "Invite teammates, assign roles, and control exactly what each person can view, edit, or manage.",
-        size: "large",
+        size: "normal",
         icon: (
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                 <circle cx="14" cy="14" r="5" stroke="currentColor" strokeWidth="1.5" />
