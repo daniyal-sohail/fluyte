@@ -1,5 +1,5 @@
 /* ============================================================
-   DevXcript — Global CSS
+   Fluyte — Global CSS
    ============================================================ */
 
 @import "tailwindcss";
@@ -12,10 +12,17 @@
 
   --bg: #E5E4E3;
   --surface: #ECEAE9;
+  --surface-2: #F2F0EF;
   --border: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.15);
 
   --text: #0f0f0f;
   --text-muted: #6a6a6a;
+  --text-dim: #999999;
+
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 18px;
 
   --font-display: 'Aldrich', sans-serif;
   --font-body: 'Space Grotesk', sans-serif;
@@ -24,25 +31,38 @@
 /* ── Dark Theme ──────────────────────────────────────────── */
 [data-theme="dark"],
 .dark {
-  --bg: #0a0a0a;
-  --surface: #141414;
+  --brand: #14a8bf;
+  --brand-dark: #0F8CA0;
+  --brand-muted: rgba(20, 168, 191, 0.1);
+
+  --bg: #121010;
+  --surface: #111111;
+  --surface-2: #1a1a1a;
   --border: rgba(255, 255, 255, 0.07);
+  --border-strong: rgba(255, 255, 255, 0.13);
+
   --text: #f0f0f0;
-  --text-muted: #6a6a6a;
+  --text-muted: #999999;
+  --text-dim: #666666;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #0a0a0a;
-    --surface: #141414;
+    --brand: #14a8bf;
+    --brand-dark: #0F8CA0;
+    --brand-muted: rgba(20, 168, 191, 0.1);
+
+    --bg: #121010;
+    --surface: #111111;
+    --surface-2: #1a1a1a;
     --border: rgba(255, 255, 255, 0.07);
+    --border-strong: rgba(255, 255, 255, 0.13);
+
     --text: #f0f0f0;
-    --text-muted: #6a6a6a;
+    --text-muted: #999999;
+    --text-dim: #666666;
   }
 }
-
-/* ── Reset ───────────────────────────────────────────────── */
-
 
 /* ── Scrollbar hidden ────────────────────────────────────── */
 * {
@@ -69,6 +89,7 @@ body {
   overflow-x: hidden;
 }
 
+/* ── Typography ──────────────────────────────────────────── */
 h1,
 h2,
 h3,
@@ -87,9 +108,7 @@ h6.font-mono {
   font-family: var(--font-display);
 }
 
-.home-xenor-typography,
 .home-xenor-typography p,
-/* .home-xenor-typography span, */
 .home-xenor-typography a,
 .home-xenor-typography li,
 .home-xenor-typography button,

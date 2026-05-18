@@ -1,64 +1,64 @@
 
-import About from "@/components/homeCompoents/About";
-import Hero from "@/components/homeCompoents/Hero";
-import Portfolio from "@/components/homeCompoents/Portfolio";
-import Services from "@/components/homeCompoents/Services";
+import Features from "@/components/homeCompoents/Features";
+import HomeHero from "@/components/homeCompoents/Hero";
+import HowItWorks from "@/components/homeCompoents/HowWorks";
+import NewsletterCTA from "@/components/homeCompoents/NewsLetter";
+import UseCases from "@/components/homeCompoents/UseCases";
 import Footer from "@/components/Layout/Footer";
 import Navbar from "@/components/Layout/Navbar";
 import type { Metadata } from "next";
 
 // page.tsx metadata
 export const metadata: Metadata = {
-  title: "Daniyal Sohail - SaaS Engineer & Full Stack Developer",
-  description: "Daniyal Sohail is a SaaS Engineer and Full Stack Developer helping founders turn ideas into production ready AI powered products. Building XenorAI — approved by Microsoft for Startups and accepted into Takhleeq Incubator.",
+  title: "Smart Inventory Management Powered by AI",
+  description:
+    "Fluyte helps you scan barcodes, extract supplier receipts with AI, and track stock across every location in real time. No hardware, no setup fee — get started in 2 minutes.",
   keywords: [
-    "Daniyal Sohail",
-    "SaaS Engineer",
-    "AI Developer",
-    "Full Stack Developer",
-    "Next.js Developer",
-    "Node.js Developer",
-    "AI SaaS Development",
-    "SaaS MVP Development",
-    "RAG Pipelines",
-    "OpenAI Developer",
-    "XenorAI",
-    "AI Automation",
-    "Freelance AI Developer",
-    "Freelance SaaS Developer",
-    "TypeScript Developer",
-    "React Developer",
-    "Pakistan Developer",
-    "Lahore Developer",
-    "Hire AI Developer",
-    "Hire SaaS Developer",
-    "AI Integration",
-    "LLM Integration",
-    "AI Chatbot Developer",
-    "SaaS Founder",
-    "Microsoft for Startups",
+    "Fluyte",
+    "inventory management app",
+    "AI inventory tracking",
+    "barcode scanner app",
+    "QR inventory system",
+    "stock management",
+    "AI receipt scanner",
+    "multi-location stock tracking",
+    "real-time inventory",
+    "inventory for small business",
+    "restaurant stock app",
+    "retail inventory",
+    "IT asset tracker",
+    "home pantry management",
+    "team inventory management",
+    "inventory SaaS",
+    "smart stock alerts",
+    "low stock notifications",
+    "QR label printing",
+    "inventory analytics",
   ],
   openGraph: {
-    title: "Daniyal Sohail - SaaS Engineer & Full Stack Developer",
-    description: "Helping founders turn ideas into production-ready AI-powered SaaS products. Building XenorAI — approved by Microsoft for Startups.",
-    url: "https://daniyalsohail.me",
+    title: "Fluyte - Smart Inventory Management Powered by AI",
+    description:
+      "Scan once, watch cargo load automatically. Fluyte turns your physical stock into a live digital system — no hardware, no setup fee.",
+    url: "https://fluyte.app",
     images: [
       {
         url: "/img/hero.png",
         width: 1200,
         height: 630,
-        alt: "Daniyal Sohail - SaaS Engineer & Full Stack Developer",
+        alt: "Fluyte - Smart Inventory Management Powered by AI",
       },
     ],
   },
   twitter: {
-    title: "Daniyal Sohail - SaaS Engineer & Full Stack Developer",
-    description: "Helping founders turn ideas into production-ready AI-powered SaaS products. Building XenorAI — approved by Microsoft for Startups.",
+    title: "Fluyte - Smart Inventory Management Powered by AI",
+    description:
+      "Scan once, watch cargo load automatically. Fluyte turns your physical stock into a live digital system — no hardware, no setup fee.",
   },
   alternates: {
-    canonical: "https://daniyalsohail.me",
+    canonical: "https://fluyte.app",
   },
 };
+
 
 export default function Home() {
   return (
@@ -67,10 +67,11 @@ export default function Home() {
     <main className=" ">
       <div className="mx-auto w-[min(1400px,calc(100%-1.5rem))] md:w-[min(1300px,calc(100%-2rem))]">
         <Navbar />
-        <Hero />
-        <About />
-        <Portfolio />
-        <Services />
+        <HomeHero />
+        <Features />
+        <UseCases />
+        <HowItWorks />
+        <NewsletterCTA />
         <Footer />
       </div>
     </main>

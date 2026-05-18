@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
 import { Aldrich, Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
-import { PersonStructuredData, WebsiteStructuredData } from "@/components/shared/StructuredData";
-import GoogleAnalytics from "@/components/shared/GoogleAnalytics";
-import GoogleTagManager from "@/components/shared/GoogleTagManager";
 import SmoothScroll from "@/components/shared/SmoothScroll";
 import AOSInitializer from "@/components/shared/AOS";
+import { ThemeProvider } from "@/store/theme";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,72 +34,69 @@ const spaceGrotesk = Space_Grotesk({
 // layout.tsx metadata
 export const metadata: Metadata = {
   title: {
-    default: "Daniyal Sohail - SaaS Engineer & Full Stack Developer | Lahore, Pakistan",
-    template: "%s | Daniyal Sohail"
+    default: "Fluyte - Smart Inventory Management Powered by AI",
+    template: "%s | Fluyte",
   },
-  description: "Daniyal Sohail is a SaaS Engineer and Full Stack Developer from Lahore, Pakistan. He helps founders and startups go from idea to a live, revenue-generating AI-powered SaaS product. Building XenorAI — approved by Microsoft for Startups and accepted into Takhleeq Incubator.",
+  description:
+    "Fluyte is an AI-powered inventory management app. Scan barcodes, extract receipts with AI, track stock across multiple locations, and get real-time analytics — no hardware, no setup fee.",
   keywords: [
-    "Daniyal Sohail",
-    "SaaS Engineer",
-    "AI Developer",
-    "Full Stack Developer",
-    "AI SaaS Development",
-    "SaaS MVP Developer",
-    "Next.js Developer",
-    "Node.js Developer",
-    "React Developer",
-    "NestJS Developer",
-    "TypeScript Developer",
-    "RAG Pipeline Developer",
-    "OpenAI Developer",
-    "LLM Integration",
-    "AI Chatbot Developer",
-    "AI Automation Developer",
-    "Freelance AI Developer",
-    "Freelance SaaS Developer",
-    "Hire SaaS Developer",
-    "Hire AI Developer",
-    "SaaS for Founders",
-    "AI for Startups",
-    "XenorAI",
-    "DevXcript",
-    "Microsoft for Startups",
-    "Takhleeq Incubator",
-    "Lahore Pakistan Developer",
-    "Pakistan AI Developer",
-    "Daniyal Sohail Portfolio",
-    "Daniyal Sohail Website",
-    "daniyalsohail.me",
+    "Fluyte",
+    "inventory management",
+    "AI inventory",
+    "barcode scanning",
+    "QR code inventory",
+    "stock tracking",
+    "AI receipt extraction",
+    "multi-location inventory",
+    "real-time stock analytics",
+    "small business inventory",
+    "restaurant inventory",
+    "retail inventory management",
+    "home pantry tracker",
+    "IT asset management",
+    "team inventory app",
+    "smart inventory",
+    "inventory SaaS",
+    "inventory app",
+    "stock management software",
+    "QR label generator",
+    "low stock alerts",
+    "inventory for founders",
+    "inventory for startups",
+    "Next.js inventory app",
+    "Firebase inventory",
   ],
-  authors: [{ name: "Daniyal Sohail" }],
+  authors: [{ name: "Daniyal Sohail", url: "https://daniyalsohail.me" }],
   creator: "Daniyal Sohail",
   publisher: "Daniyal Sohail",
-  metadataBase: new URL("https://daniyalsohail.me"),
+  metadataBase: new URL("https://fluyte.app"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://daniyalsohail.me",
-    siteName: "Daniyal Sohail",
-    title: "Daniyal Sohail - SaaS Engineer & AI Developer | Lahore, Pakistan",
-    description: "Helping founders turn ideas into production-ready AI-powered SaaS products. Building XenorAI — approved by Microsoft for Startups and accepted into Takhleeq Incubator.",
+    url: "https://fluyte.app",
+    siteName: "Fluyte",
+    title: "Fluyte - Smart Inventory Management Powered by AI",
+    description:
+      "Scan once, watch cargo load automatically. Fluyte turns your physical stock into a live digital system — no hardware, no setup fee.",
     images: [
       {
         url: "/img/hero.png",
         width: 1200,
         height: 630,
-        alt: "Daniyal Sohail - SaaS Engineer & AI Developer",
+        alt: "Fluyte - Smart Inventory Management Powered by AI",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@daniyalsohail",
+    site: "@fluyte",
     creator: "@daniyalsohail",
-    title: "Daniyal Sohail - SaaS Engineer & AI Developer | Lahore, Pakistan",
-    description: "Helping founders turn ideas into production-ready AI-powered SaaS products. Building XenorAI — approved by Microsoft for Startups.",
+    title: "Fluyte - Smart Inventory Management Powered by AI",
+    description:
+      "Scan once, watch cargo load automatically. Fluyte turns your physical stock into a live digital system — no hardware, no setup fee.",
     images: ["/img/hero.png"],
   },
   robots: {
@@ -152,31 +146,27 @@ export default function RootLayout({
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://cdn.botpress.cloud" />
 
-        {/* Structured Data for SEO */}
-        <PersonStructuredData />
-        <WebsiteStructuredData />
-
         {/* Google Tag Manager */}
-        <GoogleTagManager />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${aldrich.variable} ${spaceGrotesk.variable} antialiased scrollbar-hide no-scrollbar force-no-scrollbar`}
       >
 
         {/* Google Analytics */}
-        <GoogleAnalytics />
         <AOSInitializer />
         <SmoothScroll />
 
 
         {/* Your content */}
-        {children}
+        <ThemeProvider>
+
+          {children}
+        </ThemeProvider>
 
         {/* WhatsApp Floating Button */}
         {/* <WhatsAppButton /> */}
 
 
-        <SpeedInsights />
       </body>
     </html>
   );

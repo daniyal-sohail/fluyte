@@ -1,212 +1,230 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
+import { useEffect, useState } from "react";
 
-export default function Hero() {
+export default function HomeHero() {
+    const [visible, setVisible] = useState(false);
+
+    useEffect(() => {
+        const t = setTimeout(() => setVisible(true), 50);
+        return () => clearTimeout(t);
+    }, []);
+
+    const fade = (delay: number): React.CSSProperties => ({
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(10px)",
+        transition: `opacity 0.6s ease ${delay}ms, transform 0.6s ease ${delay}ms`,
+    });
+
     return (
-        <section className="relative mt-4 overflow-hidden flex flex-col">
-            {/* Grain texture */}
+        <section className="home-xenor-typography relative w-full overflow-hidden">
+
+            {/* soft top glow */}
             <div
-                className="pointer-events-none absolute inset-0 z-10 opacity-[0.03]"
+                className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 z-0"
                 style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
-                    backgroundRepeat: "repeat",
-                    backgroundSize: "128px",
+                    width: "600px",
+                    height: "280px",
+                    background: "radial-gradient(ellipse at 50% 0%, rgba(15,140,160,0.13) 0%, transparent 70%)",
                 }}
             />
 
-            <div data-aos="fade-in"
-                data-aos-duration="600"
-                data-aos-delay="100" className="flex-1 flex flex-col justify-center relative">
+            <div className="relative z-10 max-w-[860px] mx-auto px-5 pt-24 sm:pt-32 pb-0 flex flex-col items-center text-center" data-aos="fade-up">
 
-                {/* Top meta row */}
+                {/* badge */}
                 <div
-                    data-aos="fade-down"
-                    data-aos-duration="600"
-                    className="absolute top-[88px] left-0 right-0 md:left-12 md:right-auto z-20 flex justify-center md:justify-start items-center gap-2 px-6 md:px-0"
+                    style={{
+                        ...fade(0),
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "6px",
+                        padding: "5px 14px",
+                        borderRadius: "999px",
+                        border: "1px solid var(--border-strong)",
+                        background: "var(--surface)",
+                        marginBottom: "20px",
+                    }}
                 >
-                    <span className="relative flex h-[8px] w-[8px]">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0F8CA0] opacity-50" />
-                        <span className="relative inline-flex rounded-full h-[8px] w-[8px] bg-[#0F8CA0]" />
-                    </span>
-                    <span className="font-['Space_Grotesk',sans-serif] text-[12px] text-[#6a6a6a] tracking-widest uppercase">
-                        Available for work
+                    <span
+                        style={{
+                            width: "6px",
+                            height: "6px",
+                            borderRadius: "50%",
+                            background: "var(--brand)",
+                            display: "inline-block",
+                        }}
+                    />
+                    <span
+                        className="section-heading-badge-text"
+                        style={{
+                            fontSize: "11px",
+                            letterSpacing: "0.08em",
+                            textTransform: "uppercase",
+                            color: "var(--text-muted)",
+                        }}
+                    >
+                        Smart AI Powered Inventory
                     </span>
                 </div>
 
-                {/* Microsoft badge — desktop only */}
+                {/* headline */}
+                <h1
+                    className="section-heading-title"
+                    style={{
+                        ...fade(70),
+                        fontSize: "clamp(38px, 6vw, 68px)",
+                        fontWeight: 500,
+                        letterSpacing: "-0.025em",
+                        lineHeight: 1.1,
+                        color: "var(--text)",
+                        marginBottom: "16px",
+                        textWrap: "balance",
+                    }}
+                >
+                    Become the{" "}
+                    <span style={{ color: "var(--brand)" }}>Captain</span>
+                    <br />
+                    of Your Inventory
+                </h1>
+
+                {/* subtitle */}
+                <p
+                    className="section-heading-subtitle"
+                    style={{
+                        ...fade(130),
+                        fontSize: "15px",
+                        color: "var(--text-muted)",
+                        lineHeight: 1.65,
+                        maxWidth: "420px",
+                        marginBottom: "28px",
+                    }}
+                >
+                    Scan once, watch cargo load automatically. Fluyte turns your physical stock into a live digital system — no hardware, no setup fee.
+                </p>
+
+                {/* CTAs */}
                 <div
-                    data-aos="fade-down"
-                    data-aos-duration="600"
-                    data-aos-delay="100"
-                    className="hidden md:flex absolute top-[88px] right-12 z-20 items-center gap-2 border border-black/[0.08] rounded-full px-4 py-[6px] bg-white/60 backdrop-blur-sm"
+                    style={{
+                        ...fade(190),
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "10px",
+                        flexWrap: "wrap",
+                        justifyContent: "center",
+                        marginBottom: "20px",
+                    }}
                 >
-                    <svg width="14" height="14" viewBox="0 0 21 21" fill="none">
-                        <rect width="10" height="10" fill="#F25022" />
-                        <rect x="11" width="10" height="10" fill="#7FBA00" />
-                        <rect y="11" width="10" height="10" fill="#00A4EF" />
-                        <rect x="11" y="11" width="10" height="10" fill="#FFB900" />
-                    </svg>
-                    <span className="font-['Space_Grotesk',sans-serif] text-[11px] text-[#6a6a6a] tracking-wide">
-                        Microsoft for Startups
-                    </span>
+                    <a
+                        href="#get-started"
+                        className="section-heading-subtitle"
+                        style={{
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: "7px",
+                            background: "var(--brand)",
+                            color: "#fff",
+                            fontWeight: 500,
+                            fontSize: "13px",
+                            letterSpacing: "0.02em",
+                            padding: "10px 22px",
+                            borderRadius: "var(--radius-sm)",
+                            textDecoration: "none",
+                            border: "1px solid transparent",
+                            transition: "background 0.2s",
+                        }}
+                        onMouseEnter={e => (e.currentTarget.style.background = "var(--brand-dark)")}
+                        onMouseLeave={e => (e.currentTarget.style.background = "var(--brand)")}
+                    >
+                        Get started free
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M2 6h8M7 3l3 3-3 3" />
+                        </svg>
+                    </a>
+
+                    <a
+                        href="#demo"
+                        className="section-heading-subtitle"
+                        style={{
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: "7px",
+                            background: "transparent",
+                            color: "var(--text-muted)",
+                            fontWeight: 500,
+                            fontSize: "13px",
+                            letterSpacing: "0.02em",
+                            padding: "10px 22px",
+                            borderRadius: "var(--radius-sm)",
+                            textDecoration: "none",
+                            border: "1px solid var(--border-strong)",
+                            transition: "color 0.2s, border-color 0.2s",
+                        }}
+                        onMouseEnter={e => {
+                            e.currentTarget.style.color = "var(--brand)";
+                            e.currentTarget.style.borderColor = "var(--brand)";
+                        }}
+                        onMouseLeave={e => {
+                            e.currentTarget.style.color = "var(--text-muted)";
+                            e.currentTarget.style.borderColor = "var(--border-strong)";
+                        }}
+                    >
+                        See it in action
+                    </a>
                 </div>
 
-                {/* ── DESKTOP layout ── */}
-                <div className="hidden md:flex relative items-center justify-center px-12 mt-16">
-
-                    {/* LEFT */}
-                    <div className="flex-1 flex flex-col items-end pr-8 gap-2">
+                {/* trust pills */}
+                <div
+                    style={{
+                        ...fade(240),
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "8px",
+                        flexWrap: "wrap",
+                        justifyContent: "center",
+                        marginBottom: "48px",
+                    }}
+                >
+                    {["No credit card", "2-minute setup", "Any industry"].map((label) => (
                         <span
-                            data-aos="fade-right"
-                            data-aos-duration="700"
-                            data-aos-delay="100"
-                            className="font-['Aldrich',sans-serif] font-normal leading-none text-[#0f0f0f] select-none"
-                            style={{ fontSize: "clamp(52px, 8vw, 120px)", letterSpacing: "-0.02em" }}
+                            key={label}
+                            className="section-heading-subtitle"
+                            style={{
+                                fontSize: "12px",
+                                color: "var(--text-muted)",
+                                padding: "4px 12px",
+                                borderRadius: "999px",
+                                border: "1px solid var(--border)",
+                                background: "var(--surface)",
+                                letterSpacing: "0.01em",
+                            }}
                         >
-                            FULL
+                            {label}
                         </span>
-                        <span
-                            data-aos="fade-right"
-                            data-aos-duration="700"
-                            data-aos-delay="200"
-                            className="font-['Aldrich',sans-serif] font-normal leading-none text-[#0f0f0f] select-none"
-                            style={{ fontSize: "clamp(52px, 8vw, 120px)", letterSpacing: "-0.02em" }}
-                        >
-                            STACK
-                        </span>
-                    </div>
-
-                    {/* CENTER — Photo */}
-                    <div
-                        data-aos="fade-up"
-                        data-aos-duration="700"
-                        data-aos-delay="150"
-                        className="relative flex-shrink-0 w-[280px] lg:w-[340px]"
-                    >
-                        <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "3/4" }}>
-                            <Image
-                                src="/img/daniyal5.png"
-                                alt="Daniyal Sohail"
-                                fill
-                                className="object-cover object-top"
-                                priority
-                            />
-                        </div>
-                        <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap bg-[#0f0f0f] text-[#F2F1F0] font-['Space_Grotesk',sans-serif] text-[11px] tracking-widest uppercase px-4 py-2 rounded-lg">
-                            Daniyal Sohail
-                        </div>
-                    </div>
-
-                    {/* RIGHT */}
-                    <div className="flex-1 flex flex-col items-start pl-8 gap-2">
-                        <span
-                            data-aos="fade-left"
-                            data-aos-duration="700"
-                            data-aos-delay="100"
-                            className="font-['Aldrich',sans-serif] font-normal leading-none text-[#0f0f0f] select-none"
-                            style={{ fontSize: "clamp(52px, 8vw, 120px)", letterSpacing: "-0.02em" }}
-                        >
-                            DEVEL
-                        </span>
-                        <span
-                            data-aos="fade-left"
-                            data-aos-duration="700"
-                            data-aos-delay="200"
-                            className="font-['Aldrich',sans-serif] font-normal leading-none text-[#0f0f0f] select-none"
-                            style={{ fontSize: "clamp(52px, 8vw, 120px)", letterSpacing: "-0.02em" }}
-                        >
-                            OPER
-                        </span>
-                    </div>
+                    ))}
                 </div>
 
-                {/* ── MOBILE layout ── */}
-                <div className="flex md:hidden flex-col items-center px-6 pt-28 pb-4 gap-6">
-
-                    {/* Photo */}
-                    <div
-                        data-aos="fade-up"
-                        data-aos-duration="600"
-                        className="relative w-[180px]"
-                    >
-                        <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "3/4" }}>
-                            <Image
-                                src="/img/daniyal5.png"
-                                alt="Daniyal Sohail"
-                                fill
-                                className="object-cover object-top"
-                                priority
-                            />
-                        </div>
-                        <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap bg-[#0f0f0f] text-[#F2F1F0] font-['Space_Grotesk',sans-serif] text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-lg">
-                            Daniyal Sohail
-                        </div>
-                    </div>
-
-                    {/* Big title */}
-                    <div
-                        data-aos="fade-up"
-                        data-aos-duration="600"
-                        data-aos-delay="100"
-                        className="mt-6 text-center"
-                    >
-                        <p className="font-['Aldrich',sans-serif] font-normal leading-none text-[#0f0f0f] select-none text-[13vw] tracking-tight">
-                            FULL STACK
-                        </p>
-                        <p className="font-['Aldrich',sans-serif] font-normal leading-none text-[#0f0f0f] select-none text-[13vw] tracking-tight">
-                            DEVELOPER
-                        </p>
-                    </div>
-                </div>
-
-                {/* Bottom row — desktop */}
-                <div className="hidden md:flex flex-row items-end justify-between px-12 mt-[-10px] pb-10 gap-6">
-                    <div
-
-                        className="max-w-[360px]"
-                    >
-                        <p className="font-['Space_Grotesk',sans-serif] text-[14px] text-[#434343] leading-relaxed">
-                            I help founders turn ideas into AI powered products
-                            from zero to production ready SaaS, fast and scalable.
-                        </p>
-                    </div>
-                    <div
-
-                        className="flex items-center gap-3"
-                    >
-                        <Link
-                            href="https://calendly.com/daniyalsohaildev"
-                            target="_blank"
-                            className="font-['Space_Grotesk',sans-serif] text-[13px] font-medium bg-[#0f0f0f] text-[#F2F1F0] px-6 py-2 rounded-lg hover:bg-[#0F8CA0] transition-colors duration-200 tracking-wide"
-                        >
-                            Schedule Meeting
-                        </Link>
-                    </div>
-                </div>
-
-                {/* Bottom row — mobile */}
-                <div className="flex md:hidden flex-col px-6 pb-10 gap-5 mt-2">
-                    <p
-                        data-aos="fade-up"
-                        data-aos-duration="600"
-                        data-aos-delay="200"
-                        className="font-['Space_Grotesk',sans-serif] text-[13px] text-[#434343] leading-relaxed"
-                    >
-                        I help founders turn ideas into AI powered products
-                        from zero to production ready SaaS, fast and scalable.
-                    </p>
-                    <Link
-                        data-aos="fade-up"
-                        data-aos-duration="600"
-                        data-aos-delay="300"
-                        href="https://calendly.com/daniyalsohaildev"
-                        target="_blank"
-                        className="font-['Space_Grotesk',sans-serif] text-[13px] font-medium bg-[#0f0f0f] text-[#F2F1F0] px-6 py-3 rounded-lg hover:bg-[#0F8CA0] transition-colors duration-200 tracking-wide text-center"
-                    >
-                        Schedule Meeting
-                    </Link>
+                {/* dashboard screenshot — bottom-fade like reference */}
+                <div
+                    style={{
+                        ...fade(300),
+                        width: "100%",
+                        maxWidth: "920px",
+                        borderRadius: "var(--radius-lg) var(--radius-lg) 0 0",
+                        border: "1px solid var(--border-strong)",
+                        borderBottom: "none",
+                        overflow: "hidden",
+                        boxShadow: "0 -2px 40px rgba(0,0,0,0.05)",
+                        background: "var(--surface)",
+                        maskImage: "linear-gradient(to bottom, black 55%, transparent 100%)",
+                        WebkitMaskImage: "linear-gradient(to bottom, black 55%, transparent 100%)",
+                    }}
+                >
+                    {/* swap src for your actual dashboard screenshot */}
+                    <img
+                        src="/img/xenor.png"
+                        alt="Fluyte dashboard preview"
+                        style={{ width: "100%", height: "auto", display: "block" }}
+                    />
                 </div>
 
             </div>
