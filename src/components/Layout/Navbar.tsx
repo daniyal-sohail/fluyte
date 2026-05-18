@@ -97,12 +97,12 @@ export default function Navbar() {
                             </button>
                         )}
 
-                        <a
-                            href="#"
+                        <Link
+                            href="/sign-in"
                             className="font-['Space_Grotesk',sans-serif] text-[13px] font-medium text-[var(--text-muted)] hover:text-[var(--text)] transition-colors duration-200 tracking-wide px-3 py-1.5"
                         >
                             Sign in
-                        </a>
+                        </Link>
 
                         <a
                             href="#get-started"

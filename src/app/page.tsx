@@ -68,10 +68,11 @@ export default function Home() {
       <div className="mx-auto w-[min(1400px,calc(100%-1.5rem))] md:w-[min(1300px,calc(100%-2rem))]">
         <Navbar />
         <HomeHero />
-        <Features />
-        <UseCases />
-        <HowItWorks />
-        <NewsletterCTA />
+        <div id="features"><Features /></div>
+        <div id="use-cases"><UseCases /></div>
+        <div id="how-it-works"><HowItWorks /></div>
+        <div id="demo"><HowItWorks /></div>
+        <div id="get-started"><NewsletterCTA /></div>
         <Footer />
       </div>
     </main>
